@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://c4rnskw0dlpk1"]
+
+[ext_resource type="Texture2D" uid="uid://c6lh32rddbfjb" path="res://Assets/cool_background.png" id="1_syo6n"]
+
+[node name="Control" type="Control" unique_id=857846694]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1659937281]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_syo6n")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=195747347]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer" unique_id=161616490]
+layout_mode = 2
+
+[node name="MemberList" type="PanelContainer" parent="PanelContainer/CenterContainer" unique_id=1552317844]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/CenterContainer/MemberList" unique_id=802390784]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/CenterContainer/MemberList/MarginContainer" unique_id=34307225]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="LabelPlayer1" type="Label" parent="PanelContainer/CenterContainer/MemberList/MarginContainer/VBoxContainer" unique_id=616969381]
+layout_mode = 2
+text = "PLAYER 1 (HOST)"
+horizontal_alignment = 1
+
+[node name="LabelPlayer2" type="Label" parent="PanelContainer/CenterContainer/MemberList/MarginContainer/VBoxContainer" unique_id=1808271477]
+layout_mode = 2
+text = "PLAYER 2"
+horizontal_alignment = 1
+
+[node name="Buttons" type="HBoxContainer" parent="PanelContainer/CenterContainer/MemberList/MarginContainer/VBoxContainer" unique_id=366785188]
+layout_mode = 2
+
+[node name="LabelWaitForHost" type="Label" parent="PanelContainer/CenterContainer/MemberList/MarginContainer/VBoxContainer/Buttons" unique_id=638085005]
+visible = false
+layout_mode = 2
+text = "WAIT_FOR_HOST"
+
+[node name="ButtonStartGame" type="Button" parent="PanelContainer/CenterContainer/MemberList/MarginContainer/VBoxContainer/Buttons" unique_id=1139786767]
+layout_mode = 2
+text = "LAUNCH_GAME"
+
+[node name="ButtonKickPlayer" type="Button" parent="PanelContainer/CenterContainer/MemberList/MarginContainer/VBoxContainer/Buttons" unique_id=648507961]
+layout_mode = 2
+text = "KICK_OTHER_PLAYER"

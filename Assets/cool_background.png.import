@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddake574vklyf"
-path="res://.godot/imported/blue brick base tiles.png-0682d42e93cd3dfd8afcc9a3f95fd830.ctex"
+uid="uid://c6lh32rddbfjb"
+path="res://.godot/imported/cool_background.png-33044da53b4a42aa6336d75f43adf99c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/blue brick base tiles.png"
-dest_files=["res://.godot/imported/blue brick base tiles.png-0682d42e93cd3dfd8afcc9a3f95fd830.ctex"]
+source_file="res://Assets/cool_background.png"
+dest_files=["res://.godot/imported/cool_background.png-33044da53b4a42aa6336d75f43adf99c.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bb5d1jh8oi12w"
-path="res://.godot/imported/blue bricks.png-a7f9c2c12f89549d9317a2f37edf7a12.ctex"
+uid="uid://2gy4t3akdyag"
+path="res://.godot/imported/copper_tiles_godot_64px.png-609dccff6a9adcd22c0c81a5fc598a93.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/blue bricks.png"
-dest_files=["res://.godot/imported/blue bricks.png-a7f9c2c12f89549d9317a2f37edf7a12.ctex"]
+source_file="res://Assets/copper_tiles_godot_64px.png"
+dest_files=["res://.godot/imported/copper_tiles_godot_64px.png-609dccff6a9adcd22c0c81a5fc598a93.ctex"]
 
 [params]
 
