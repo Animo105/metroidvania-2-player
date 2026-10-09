@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b2q8g561a6mij"]
+
+[ext_resource type="Script" uid="uid://byeqwcnwsuadc" path="res://players/Smoll dude/player_1.gd" id="1_iapfj"]
+[ext_resource type="Texture2D" uid="uid://8vmamue3its8" path="res://Assets/smoll_character.png" id="2_lomkt"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iapfj"]
+radius = 19.0
+height = 88.0
+
+[node name="Player1" type="CharacterBody2D" unique_id=173757113]
+script = ExtResource("1_iapfj")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=366107139]
+position = Vector2(4, -51)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_lomkt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1442353546]
+position = Vector2(1, -44)
+shape = SubResource("CapsuleShape2D_iapfj")
