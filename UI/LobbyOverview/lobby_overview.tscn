@@ -1,14 +1,16 @@
 [gd_scene format=3 uid="uid://c4rnskw0dlpk1"]
 
-[ext_resource type="Texture2D" uid="uid://c6lh32rddbfjb" path="res://Assets/cool_background.png" id="1_syo6n"]
+[ext_resource type="Script" uid="uid://ccapdcdnfk8ja" path="res://UI/LobbyOverview/lobby_overview.gd" id="1_7s2xb"]
+[ext_resource type="Texture2D" uid="uid://c6lh32rddbfjb" path="res://Assets/cool_background.png" id="2_8qot4"]
 
-[node name="Control" type="Control" unique_id=857846694]
+[node name="LobbyOverview" type="Control" unique_id=857846694]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_7s2xb")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1659937281]
 layout_mode = 1
@@ -17,7 +19,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_syo6n")
+texture = ExtResource("2_8qot4")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=195747347]
 layout_mode = 1
@@ -54,18 +56,29 @@ layout_mode = 2
 text = "PLAYER 2"
 horizontal_alignment = 1
 
-[node name="Buttons" type="HBoxContainer" parent="PanelContainer/CenterContainer/MemberList/MarginContainer/VBoxContainer" unique_id=366785188]
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/CenterContainer/MemberList/MarginContainer/VBoxContainer" unique_id=1133358804]
 layout_mode = 2
 
-[node name="LabelWaitForHost" type="Label" parent="PanelContainer/CenterContainer/MemberList/MarginContainer/VBoxContainer/Buttons" unique_id=638085005]
-visible = false
+[node name="PeerLabel" type="Label" parent="PanelContainer/CenterContainer/MemberList/MarginContainer/VBoxContainer" unique_id=473151098]
 layout_mode = 2
 text = "WAIT_FOR_HOST"
+horizontal_alignment = 1
 
-[node name="ButtonStartGame" type="Button" parent="PanelContainer/CenterContainer/MemberList/MarginContainer/VBoxContainer/Buttons" unique_id=1139786767]
+[node name="HostButtonSet" type="HBoxContainer" parent="PanelContainer/CenterContainer/MemberList/MarginContainer/VBoxContainer" unique_id=366785188]
+layout_mode = 2
+
+[node name="ButtonStartGame" type="Button" parent="PanelContainer/CenterContainer/MemberList/MarginContainer/VBoxContainer/HostButtonSet" unique_id=1139786767]
 layout_mode = 2
 text = "LAUNCH_GAME"
 
-[node name="ButtonKickPlayer" type="Button" parent="PanelContainer/CenterContainer/MemberList/MarginContainer/VBoxContainer/Buttons" unique_id=648507961]
+[node name="ButtonKickPlayer" type="Button" parent="PanelContainer/CenterContainer/MemberList/MarginContainer/VBoxContainer/HostButtonSet" unique_id=648507961]
 layout_mode = 2
 text = "KICK_OTHER_PLAYER"
+
+[node name="Quitt" type="Button" parent="PanelContainer/CenterContainer/MemberList/MarginContainer/VBoxContainer" unique_id=1517903177]
+layout_mode = 2
+text = "QUITT"
+
+[connection signal="pressed" from="PanelContainer/CenterContainer/MemberList/MarginContainer/VBoxContainer/HostButtonSet/ButtonStartGame" to="." method="_on_button_start_game_pressed"]
+[connection signal="pressed" from="PanelContainer/CenterContainer/MemberList/MarginContainer/VBoxContainer/HostButtonSet/ButtonKickPlayer" to="." method="_on_button_kick_player_pressed"]
+[connection signal="pressed" from="PanelContainer/CenterContainer/MemberList/MarginContainer/VBoxContainer/Quitt" to="." method="_on_quitt_pressed"]

@@ -18,6 +18,7 @@ config/icon="res://Assets/icon.svg"
 [autoload]
 
 Network="*uid://cqnicm0waqky0"
+SceneManager="*uid://dkwvepjpje67v"
 
 [display]
 
@@ -28,7 +29,8 @@ window/stretch/aspect="expand"
 
 folder_colors={
 "res://Assets/": "yellow",
-"res://Globals/": "purple"
+"res://Globals/": "purple",
+"res://UI/": "green"
 }
 
 [input]

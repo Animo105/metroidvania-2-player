@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://b1e301s32qwje"]
 
+[ext_resource type="Script" uid="uid://s7bi3abk75iq" path="res://UI/Menu/menu.gd" id="1_e4s1a"]
+
 [node name="Menu" type="Control" unique_id=1724447640]
 layout_mode = 3
 anchors_preset = 15
@@ -7,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_e4s1a")
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1289528814]
 layout_mode = 1
@@ -21,4 +24,6 @@ layout_mode = 2
 
 [node name="Button" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1341434699]
 layout_mode = 2
-text = "Host"
+text = "HOST_GAME"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
