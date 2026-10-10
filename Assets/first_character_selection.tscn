@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://caias4gow5vin"]
+
+[ext_resource type="Texture2D" uid="uid://8vmamue3its8" path="res://Assets/smoll_character.png" id="1_cg40u"]
+[ext_resource type="Texture2D" uid="uid://c6kp2o25cogeq" path="res://Assets/big_character.png" id="2_fc7ky"]
+
+[node name="FirstCharacterSelection" type="PanelContainer" unique_id=1790298096]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1319470278]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=321178529]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1167275617]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "CHARACTER_SELECTION"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer" unique_id=628807690]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "CHARACTER_SELECT_TEXT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=2019109802]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=2058604682]
+layout_mode = 2
+
+[node name="SmollGuy" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1951959041]
+layout_mode = 2
+texture = ExtResource("1_cg40u")
+
+[node name="BigGuy" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=749889345]
+layout_mode = 2
+texture = ExtResource("2_fc7ky")

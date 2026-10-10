@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b1e301s32qwje"]
 
 [ext_resource type="Script" uid="uid://s7bi3abk75iq" path="res://UI/Menu/menu.gd" id="1_e4s1a"]
+[ext_resource type="Texture2D" uid="uid://c6lh32rddbfjb" path="res://Assets/cool_background.png" id="2_gqyth"]
 
 [node name="Menu" type="Control" unique_id=1724447640]
 layout_mode = 3
@@ -11,7 +12,16 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_e4s1a")
 
-[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1289528814]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1897906827]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_gqyth")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=939886852]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,11 +29,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1910804072]
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer" unique_id=1289528814]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1341434699]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/CenterContainer" unique_id=1910804072]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=1341434699]
 layout_mode = 2
 text = "HOST_GAME"
 
-[connection signal="pressed" from="CenterContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="PanelContainer/CenterContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

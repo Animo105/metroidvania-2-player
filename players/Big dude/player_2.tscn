@@ -2,6 +2,10 @@
 
 [ext_resource type="Script" uid="uid://bl2w078mx320s" path="res://players/Big dude/player_2.gd" id="1_hg2n7"]
 [ext_resource type="Texture2D" uid="uid://c6kp2o25cogeq" path="res://Assets/big_character.png" id="2_1qxx0"]
+[ext_resource type="Script" uid="uid://bnxw3j6q1h1q3" path="res://players/State Machine/PlayerFSM.gd" id="3_0uxui"]
+[ext_resource type="Script" uid="uid://n4u6r3mqufj1" path="res://players/State Machine/CommonStates/player_grounded_state.gd" id="4_3h33q"]
+[ext_resource type="Script" uid="uid://cu63p0oseesin" path="res://players/State Machine/CommonStates/player_falling_state.gd" id="5_pqacr"]
+[ext_resource type="Script" uid="uid://cyvhh480oqr2k" path="res://players/State Machine/CommonStates/player_jump_state.gd" id="6_ix8db"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1qxx0"]
 radius = 31.0
@@ -18,3 +22,22 @@ texture = ExtResource("2_1qxx0")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2024860396]
 position = Vector2(1, -51)
 shape = SubResource("CapsuleShape2D_1qxx0")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1555774826]
+position = Vector2(5, -81)
+
+[node name="PlayerFSM" type="Node" parent="." unique_id=678721573]
+script = ExtResource("3_0uxui")
+metadata/_custom_type_script = "uid://bnxw3j6q1h1q3"
+
+[node name="Grounded" type="Node" parent="PlayerFSM" unique_id=790503660]
+script = ExtResource("4_3h33q")
+metadata/_custom_type_script = "uid://n4u6r3mqufj1"
+
+[node name="Falling" type="Node" parent="PlayerFSM" unique_id=1050466860]
+script = ExtResource("5_pqacr")
+metadata/_custom_type_script = "uid://cu63p0oseesin"
+
+[node name="Jump" type="Node" parent="PlayerFSM" unique_id=915454675]
+script = ExtResource("6_ix8db")
+metadata/_custom_type_script = "uid://cyvhh480oqr2k"

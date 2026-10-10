@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://c4rnskw0dlpk1"]
+[gd_scene format=3 uid="uid://drkhkbhbxigda"]
 
 [ext_resource type="Script" uid="uid://ccapdcdnfk8ja" path="res://UI/LobbyOverview/lobby_overview.gd" id="1_7s2xb"]
 [ext_resource type="Texture2D" uid="uid://c6lh32rddbfjb" path="res://Assets/cool_background.png" id="2_8qot4"]
@@ -32,53 +32,54 @@ grow_vertical = 2
 [node name="CenterContainer" type="CenterContainer" parent="PanelContainer" unique_id=161616490]
 layout_mode = 2
 
-[node name="MemberList" type="PanelContainer" parent="PanelContainer/CenterContainer" unique_id=1552317844]
+[node name="Panel" type="PanelContainer" parent="PanelContainer/CenterContainer" unique_id=130817415]
 layout_mode = 2
+offset_transform_enabled = true
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/CenterContainer/MemberList" unique_id=802390784]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/CenterContainer/Panel" unique_id=1952476236]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/CenterContainer/MemberList/MarginContainer" unique_id=34307225]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/CenterContainer/Panel/MarginContainer" unique_id=169094311]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="LabelPlayer1" type="Label" parent="PanelContainer/CenterContainer/MemberList/MarginContainer/VBoxContainer" unique_id=616969381]
+[node name="LabelPlayer1" type="Label" parent="PanelContainer/CenterContainer/Panel/MarginContainer/VBoxContainer" unique_id=1947605831]
 layout_mode = 2
 text = "PLAYER 1 (HOST)"
 horizontal_alignment = 1
 
-[node name="LabelPlayer2" type="Label" parent="PanelContainer/CenterContainer/MemberList/MarginContainer/VBoxContainer" unique_id=1808271477]
+[node name="LabelPlayer2" type="Label" parent="PanelContainer/CenterContainer/Panel/MarginContainer/VBoxContainer" unique_id=562474726]
 layout_mode = 2
 text = "PLAYER 2"
 horizontal_alignment = 1
 
-[node name="HSeparator" type="HSeparator" parent="PanelContainer/CenterContainer/MemberList/MarginContainer/VBoxContainer" unique_id=1133358804]
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/CenterContainer/Panel/MarginContainer/VBoxContainer" unique_id=1222994792]
 layout_mode = 2
 
-[node name="PeerLabel" type="Label" parent="PanelContainer/CenterContainer/MemberList/MarginContainer/VBoxContainer" unique_id=473151098]
+[node name="PeerLabel" type="Label" parent="PanelContainer/CenterContainer/Panel/MarginContainer/VBoxContainer" unique_id=972524652]
 layout_mode = 2
 text = "WAIT_FOR_HOST"
 horizontal_alignment = 1
 
-[node name="HostButtonSet" type="HBoxContainer" parent="PanelContainer/CenterContainer/MemberList/MarginContainer/VBoxContainer" unique_id=366785188]
+[node name="HostButtonSet" type="HBoxContainer" parent="PanelContainer/CenterContainer/Panel/MarginContainer/VBoxContainer" unique_id=598000199]
 layout_mode = 2
 
-[node name="ButtonStartGame" type="Button" parent="PanelContainer/CenterContainer/MemberList/MarginContainer/VBoxContainer/HostButtonSet" unique_id=1139786767]
+[node name="ButtonStartGame" type="Button" parent="PanelContainer/CenterContainer/Panel/MarginContainer/VBoxContainer/HostButtonSet" unique_id=1484921706]
 layout_mode = 2
 text = "LAUNCH_GAME"
 
-[node name="ButtonKickPlayer" type="Button" parent="PanelContainer/CenterContainer/MemberList/MarginContainer/VBoxContainer/HostButtonSet" unique_id=648507961]
+[node name="ButtonKickPlayer" type="Button" parent="PanelContainer/CenterContainer/Panel/MarginContainer/VBoxContainer/HostButtonSet" unique_id=1416061224]
 layout_mode = 2
 text = "KICK_OTHER_PLAYER"
 
-[node name="Quitt" type="Button" parent="PanelContainer/CenterContainer/MemberList/MarginContainer/VBoxContainer" unique_id=1517903177]
+[node name="Quit" type="Button" parent="PanelContainer/CenterContainer/Panel/MarginContainer/VBoxContainer" unique_id=1876838246]
 layout_mode = 2
-text = "QUITT"
+text = "QUIT"
 
-[connection signal="pressed" from="PanelContainer/CenterContainer/MemberList/MarginContainer/VBoxContainer/HostButtonSet/ButtonStartGame" to="." method="_on_button_start_game_pressed"]
-[connection signal="pressed" from="PanelContainer/CenterContainer/MemberList/MarginContainer/VBoxContainer/HostButtonSet/ButtonKickPlayer" to="." method="_on_button_kick_player_pressed"]
-[connection signal="pressed" from="PanelContainer/CenterContainer/MemberList/MarginContainer/VBoxContainer/Quitt" to="." method="_on_quitt_pressed"]
+[connection signal="pressed" from="PanelContainer/CenterContainer/Panel/MarginContainer/VBoxContainer/HostButtonSet/ButtonStartGame" to="." method="_on_button_start_game_pressed"]
+[connection signal="pressed" from="PanelContainer/CenterContainer/Panel/MarginContainer/VBoxContainer/HostButtonSet/ButtonKickPlayer" to="." method="_on_button_kick_player_pressed"]
+[connection signal="pressed" from="PanelContainer/CenterContainer/Panel/MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
