@@ -7,6 +7,11 @@ class_name SmollDude
 
 func update_authority(id : int):
 	set_multiplayer_authority(id, true)
+	if camera_2d:
+		camera_2d.enabled = is_multiplayer_authority()
+
+func _ready() -> void:
+	set_multiplayer_authority(get_multiplayer_authority(), true)
 	print(
 		name,
 		" | Local peer: ", multiplayer.get_unique_id(),
@@ -15,11 +20,6 @@ func update_authority(id : int):
 	)
 	if multiplayer_synchronizer:
 		print("multiplyer_syncronizer authority: ",get_multiplayer_authority())
-	if camera_2d:
-		camera_2d.enabled = is_multiplayer_authority()
-
-func _ready() -> void:
-	set_multiplayer_authority(get_multiplayer_authority(), true)
 
 func _physics_process(delta: float) -> void:
 	if not is_multiplayer_authority(): return
