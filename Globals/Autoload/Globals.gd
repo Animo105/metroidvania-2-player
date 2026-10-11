@@ -52,14 +52,20 @@ func swap_characters():
 
 @rpc("authority", "call_local", "reliable")
 func launch_game():
-	print("LAUNCHING GAME!!")
+	
 	is_smoll_dude = true if Network.is_owner else false
 	var peers := multiplayer.get_peers()
 	if peers.size() != 1: return
 	Globals.self_peer_id= multiplayer.get_unique_id()
 	Globals.other_peer_id = peers[0]
 	apply_authority()
-	print("Is character smoll guy: ", is_smoll_dude)
+	print("LAUNCHING GAME!!")
+	prints("is_smoll_guy:", is_smoll_dude)
+	prints("Self_id :", self_peer_id)
+	prints("Other_id :", other_peer_id)
+	prints("Smoll_dude_authority:",smoll_dude.get_multiplayer_authority())
+	prints("Big_dude_authority:",big_dude.get_multiplayer_authority())
+	
 	LevelManager.change_to_level("res://Maps/test/starting_test.tscn", "StartingPoint")
 
 @rpc("any_peer", "call_remote", "reliable")
