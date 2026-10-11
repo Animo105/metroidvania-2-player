@@ -35,14 +35,11 @@ func _ready() -> void:
 	var packed_big_dude : PackedScene = load("res://players/Big dude/player_2.tscn")
 	smoll_dude = packed_smoll_dude.instantiate()
 	big_dude = packed_big_dude.instantiate()
-	print(smoll_dude)
-	print(big_dude)
 
 func apply_authority():
 	if is_smoll_dude:
 		big_dude.update_authority(other_peer_id)
 		smoll_dude.update_authority(self_peer_id)
-		
 	else:
 		smoll_dude.update_authority(other_peer_id)
 		big_dude.update_authority(self_peer_id)
@@ -55,7 +52,7 @@ func swap_characters():
 @rpc("authority", "call_local", "reliable")
 func launch_game():
 	is_smoll_dude = true if Network.is_owner else false
-	SceneManager.load_from_file("res://Maps/Map.tscn")
+	LevelManager.change_to_level("res://Maps/test/starting_test.tscn", "StartingPoint")
 
 @rpc("any_peer", "call_remote", "reliable")
 func sync_map(map_id : String):

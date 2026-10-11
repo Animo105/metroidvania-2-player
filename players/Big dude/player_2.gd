@@ -10,8 +10,10 @@ func update_authority(id : int):
 		camera_2d.enabled = is_multiplayer_authority()
 
 func _physics_process(delta: float) -> void:
+	if not is_multiplayer_authority(): return
 	fsm.physics_update(delta)
 
 func _process(delta: float) -> void:
+	if not is_multiplayer_authority(): return
 	fsm.update(delta)
 	

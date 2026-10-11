@@ -18,9 +18,8 @@ tile_set = ExtResource("2_v6vg7")
 [node name="StartingZoneLeft" type="Area2D" parent="." unique_id=1219726062 node_paths=PackedStringArray("spawn_point")]
 position = Vector2(-1165, -114)
 script = ExtResource("3_pxphd")
-space_type = null
 toward_scene_path = "uid://bvispemk2uhmk"
-toward_transition_space_name = "Zone2Right"
+toward_transition_space_name = &"Zone2Right"
 spawn_point = NodePath("CollisionShape2D/Marker2D")
 metadata/_custom_type_script = "uid://ddme071y85g7k"
 
@@ -29,7 +28,7 @@ position = Vector2(45, -89)
 shape = SubResource("RectangleShape2D_pe0b4")
 
 [node name="Marker2D" type="Marker2D" parent="StartingZoneLeft/CollisionShape2D" unique_id=2075466190]
-position = Vector2(206, 79)
+position = Vector2(206, 138)
 
 [node name="StartingPoint" type="Marker2D" parent="." unique_id=1980643110 groups=["TransitionPoint"]]
 position = Vector2(2, -50)

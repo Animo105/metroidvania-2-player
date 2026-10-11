@@ -5,6 +5,7 @@ var current_level : Level
 
 func change_to_level(file : String, exit_name : StringName):
 	var packed_scene : PackedScene = load(file)
+	
 	var instance : Level = packed_scene.instantiate()
 	if not instance : return
 	var other_player_node = Globals.get_other_player_node()

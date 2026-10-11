@@ -8,7 +8,7 @@ enum SpaceType {
 
 var can_enter
 
-@export var space_type : SpaceType = SpaceType.DOOR
+@export var space_type : SpaceType = SpaceType.AREA
 @export_file("*.tscn") var toward_scene_path: String
 @export var toward_transition_space_name : StringName
 @export var spawn_point : Marker2D
@@ -21,7 +21,6 @@ func _init() -> void:
 
 func _ready() -> void:
 	add_to_group("TransitionPoint")
-	print(get_tree().get_nodes_in_group("TransitionPoint"))
 
 func _on_player_enter(body : Node2D):
 	if not body is Player: return
