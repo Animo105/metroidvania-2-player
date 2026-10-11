@@ -35,7 +35,9 @@ func _ready() -> void:
 			fsm = child
 		elif child is PlayerInputComponent:
 			input_component = child
+			input_component.player = self
 	is_local_player = (multiplayer.get_unique_id() == owner_peer_id)
+	print(is_local_player)
 
 func _physics_process(delta: float) -> void:
 	if multiplayer.is_server():

@@ -4,22 +4,17 @@ class_name PlayerInputComponent
 var move_direction: float = 0.0
 var jump_pressed: bool = false
 
-@export var player: Player
-
-func _ready() -> void:
-	if not player:
-		if not get_parent() is Player:
-			push_error("PlayerInputComponent without a player")
-			queue_free()
-			return
-		player = get_parent()
+var player: Player
 
 func _process(_delta: float) -> void:
+	if not player: return
 	if player.is_local_player:
+		print("player is local")
 		move_direction = Input.get_axis("move_left", "move_right")
 		jump_pressed = Input.is_action_pressed("jump")
 
 func _physics_process(_delta: float) -> void:
+	if not player: return
 	if Input.is_action_just_pressed("jump"):
 		print("jumped")
 	if not multiplayer.is_server():
