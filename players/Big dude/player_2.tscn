@@ -183,6 +183,6 @@ legs_animation_player = NodePath("../Legs/AnimatedSprite2D")
 body_animation_player = NodePath("../Body/AnimatedSprite2D")
 metadata/_custom_type_script = "uid://dmey1bvo8222e"
 
-[node name="PlayerInputComponent" type="Node" parent="." unique_id=41953796]
+[node name="Player2Inputs" type="Node" parent="." unique_id=41953796]
 script = ExtResource("11_j1lu0")
 metadata/_custom_type_script = "uid://bk6flpn2jjgym"

@@ -51,6 +51,6 @@ position = Vector2(14, -128)
 [node name="Sprite2D" type="Sprite2D" parent="Legs" unique_id=967568508]
 texture = ExtResource("8_busc0")
 
-[node name="PlayerInputComponent" type="Node" parent="." unique_id=1654601535]
+[node name="Player1Inputs" type="Node" parent="." unique_id=1654601535]
 script = ExtResource("8_wti5m")
 metadata/_custom_type_script = "uid://bk6flpn2jjgym"

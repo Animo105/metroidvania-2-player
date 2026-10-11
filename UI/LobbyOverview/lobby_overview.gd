@@ -24,6 +24,7 @@ func _ready() -> void:
 
 
 func update_lobby():
+	print("update lobby")
 	label_player_1.text = "LOADING"
 	label_player_2.text = "LOADING"
 	var number_member : int = Steam.getNumLobbyMembers(Network.lobby_id)

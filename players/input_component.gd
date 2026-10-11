@@ -15,13 +15,15 @@ func _process(_delta: float) -> void:
 
 func _physics_process(_delta: float) -> void:
 	if not player: return
-	
+	prints(name,": jump",jump_pressed,", direction",move_direction)
 	if not multiplayer.is_server():
 		submit_inputs.rpc_id(1, move_direction, jump_pressed)
 
 @rpc("any_peer", "call_remote", "unreliable")
 func submit_inputs(direction: float, jump: bool) -> void:
 	if not multiplayer.is_server(): return
-	if get_multiplayer_authority() == multiplayer.get_remote_sender_id():
+	print("Recived inputs")
+	if player.owner_peer_id == multiplayer.get_remote_sender_id():
+		print("update inputs")
 		move_direction = direction
 		jump_pressed = jump
