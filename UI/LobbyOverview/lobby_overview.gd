@@ -45,11 +45,7 @@ func _on_quit_pressed() -> void:
 func _on_button_start_game_pressed() -> void:
 	if not Network.is_owner : return
 	if  Steam.getNumLobbyMembers(Network.lobby_id) != 2: return
-	var peers := multiplayer.get_peers()
-	if peers.size() != 1: return
-	Globals.player1_peer_id = multiplayer.get_unique_id()
-	Globals.player2_peer_id = peers[0]
-	SceneManager.load_from_file("res://Maps/Map.tscn")
+	Globals.launch_game.rpc()
 
 func _on_button_kick_player_pressed() -> void:
 	if not Network.is_owner : return

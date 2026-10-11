@@ -12,6 +12,7 @@ var smoll_dude : SmollDude
 var big_dude : BigDude
 
 var is_smoll_dude : bool
+
 var self_peer_id : int
 var other_peer_id : int
 
@@ -51,7 +52,13 @@ func swap_characters():
 
 @rpc("authority", "call_local", "reliable")
 func launch_game():
+	print("LAUNCHING GAME!!")
 	is_smoll_dude = true if Network.is_owner else false
+	var peers := multiplayer.get_peers()
+	if peers.size() != 1: return
+	Globals.self_peer_id= multiplayer.get_unique_id()
+	Globals.other_peer_id = peers[0]
+	apply_authority()
 	LevelManager.change_to_level("res://Maps/test/starting_test.tscn", "StartingPoint")
 
 @rpc("any_peer", "call_remote", "reliable")

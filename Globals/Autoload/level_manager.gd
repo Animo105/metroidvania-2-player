@@ -25,5 +25,5 @@ func change_to_level(file : String, exit_name : StringName):
 			elif node is Marker2D:
 				self_player_node.global_position  = node.global_position
 	Globals.self_map_id = current_level.level_id
-	Globals.rpc("sync_map", current_level.level_id)
+	Globals.sync_map.rpc(current_level.level_id)
 	
