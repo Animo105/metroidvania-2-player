@@ -5,5 +5,9 @@ func _on_button_pressed() -> void:
 	Network.host_lobby()
 
 
-func _on_button_2_pressed() -> void:
-	SceneManager.load_from_file("res://game.tscn")
+func _on_button_host_local_pressed() -> void:
+	Network.host_local()
+
+
+func _on_button_join_local_pressed() -> void:
+	Network.join_local()

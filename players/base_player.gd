@@ -37,17 +37,17 @@ func _ready() -> void:
 			input_component = child
 			input_component.player = self
 	is_local_player = (multiplayer.get_unique_id() == owner_peer_id)
+	set_multiplayer_authority(owner_peer_id, true)
 
 func _physics_process(delta: float) -> void:
 	if multiplayer.is_server():
-		print("physics process ", name)
 		fsm.physics_update(delta)
 	elif is_local_player:
 		fsm.physics_update(delta)
 
 func _process(delta: float) -> void:
 	if multiplayer.is_server():
-		fsm.update(delta)
+		fsm.physics_update(delta)
 	elif is_local_player:
 		fsm.update(delta)
 

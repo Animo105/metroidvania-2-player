@@ -15,45 +15,46 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	panel.offset_transform_position = Vector2(0, 500)
-	Steam.lobby_chat_update.connect(_on_lobby_chat_update)
-	host_button_set.visible = Network.is_owner
-	peer_label.visible = not Network.is_owner
+	Network.lobby_update.connect(update_lobby)
+	host_button_set.visible = multiplayer.is_server()
+	peer_label.visible = not multiplayer.is_server()
 	update_lobby()
 	var tween : Tween = create_tween()
 	tween.tween_property(panel, "offset_transform_position:y", 0, 0.3)
 
-
-func update_lobby():
-	print("update lobby")
-	label_player_1.text = "LOADING"
-	label_player_2.text = "LOADING"
-	var number_member : int = Steam.getNumLobbyMembers(Network.lobby_id)
-	for i in range(number_member):
+func _set_names_with_steam():
+	for i in range(Steam.getNumLobbyMembers(Network.lobby_id)):
 		var steam_id : int = Steam.getLobbyMemberByIndex(Network.lobby_id, i)
 		var steam_name : String = Steam.getFriendPersonaName(steam_id)
 		if steam_id == Network.owner_id:
 			label_player_1.text = "%s (%s)" % [steam_name, TranslationServer.translate("HOST")]
 		else:
 			label_player_2.text = steam_name
-	button_start_game.disabled = number_member != 2
 
-func _on_lobby_chat_update(_lobby_id : int, _changed_id : int, _making_change_id : int, _chat_state : int):
-	update_lobby()
+func _set_name_with_peer():
+	label_player_1.text = str(multiplayer.get_unique_id())
+	if multiplayer.get_peers().size() == 1:
+		label_player_2.text = str(multiplayer.get_peers()[0])
+
+func update_lobby():
+	label_player_1.text = "LOADING"
+	label_player_2.text = "LOADING"
+	if Network.via_steam:
+		_set_names_with_steam()
+	else:
+		_set_name_with_peer()
+	button_start_game.disabled = multiplayer.get_peers().size() != 1
 
 func _on_quit_pressed() -> void:
 	Network.leave_lobby()
 
 func _on_button_start_game_pressed() -> void:
-	if not Network.is_owner : return
-	if  Steam.getNumLobbyMembers(Network.lobby_id) != 2: return
+	if not multiplayer.is_server(): return
+	if  multiplayer.get_peers().size() != 1: return
 	Globals.set_up_game()
 
 func _on_button_kick_player_pressed() -> void:
-	if not Network.is_owner : return
+	if not multiplayer.is_server(): return
 	var peers = multiplayer.get_peers()
 	if peers.size() == 1:
 		Network.kick_from_lobby.rpc_id(peers[0])
-
-
-func _on_button_pressed() -> void:
-	update_lobby()

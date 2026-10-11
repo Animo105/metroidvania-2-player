@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://drkhkbhbxigda"]
 
-[ext_resource type="Script" uid="uid://ccapdcdnfk8ja" path="res://UI/LobbyOverview/lobby_overview.gd" id="1_7s2xb"]
-[ext_resource type="Texture2D" uid="uid://c6lh32rddbfjb" path="res://Assets/cool_background.png" id="2_8qot4"]
+[ext_resource type="Script" uid="uid://ccapdcdnfk8ja" path="res://UI/Lobby Overview/lobby_overview.gd" id="1_wy36g"]
+[ext_resource type="Texture2D" uid="uid://c6lh32rddbfjb" path="res://Assets/cool_background.png" id="2_nkp80"]
 
 [node name="LobbyOverview" type="Control" unique_id=857846694]
 layout_mode = 3
@@ -10,7 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_7s2xb")
+script = ExtResource("1_wy36g")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1659937281]
 layout_mode = 1
@@ -19,7 +19,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_8qot4")
+texture = ExtResource("2_nkp80")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=195747347]
 layout_mode = 1
@@ -76,15 +76,10 @@ text = "LAUNCH_GAME"
 layout_mode = 2
 text = "KICK_OTHER_PLAYER"
 
-[node name="Button" type="Button" parent="PanelContainer/CenterContainer/Panel/MarginContainer/VBoxContainer/HostButtonSet" unique_id=966895360]
-layout_mode = 2
-text = "force update"
-
 [node name="Quit" type="Button" parent="PanelContainer/CenterContainer/Panel/MarginContainer/VBoxContainer" unique_id=1876838246]
 layout_mode = 2
 text = "QUIT"
 
 [connection signal="pressed" from="PanelContainer/CenterContainer/Panel/MarginContainer/VBoxContainer/HostButtonSet/ButtonStartGame" to="." method="_on_button_start_game_pressed"]
 [connection signal="pressed" from="PanelContainer/CenterContainer/Panel/MarginContainer/VBoxContainer/HostButtonSet/ButtonKickPlayer" to="." method="_on_button_kick_player_pressed"]
-[connection signal="pressed" from="PanelContainer/CenterContainer/Panel/MarginContainer/VBoxContainer/HostButtonSet/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="PanelContainer/CenterContainer/Panel/MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

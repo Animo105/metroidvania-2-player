@@ -24,7 +24,7 @@ func update_current_animation(new_animation : String):
 	legs_animation_player.play(new_animation)
 	body_animation_player.play(new_animation)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if not player: return
 	if player.velocity == Vector2.ZERO:
 		update_current_animation("idle")

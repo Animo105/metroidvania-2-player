@@ -39,9 +39,19 @@ layout_mode = 2
 layout_mode = 2
 text = "HOST_GAME"
 
-[node name="Button2" type="Button" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=223744344]
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=447451180]
 layout_mode = 2
-text = "Fucking shit je veux jouer solo"
+theme_override_constants/separation = 20
+
+[node name="ButtonHostLocal" type="Button" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=857352207]
+layout_mode = 2
+text = "Host tout seul"
+
+[node name="ButtonJoinLocal" type="Button" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=263709378]
+layout_mode = 2
+text = "Join tout seul
+"
 
 [connection signal="pressed" from="PanelContainer/CenterContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="PanelContainer/CenterContainer/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="PanelContainer/CenterContainer/VBoxContainer/ButtonHostLocal" to="." method="_on_button_host_local_pressed"]
+[connection signal="pressed" from="PanelContainer/CenterContainer/VBoxContainer/ButtonJoinLocal" to="." method="_on_button_join_local_pressed"]

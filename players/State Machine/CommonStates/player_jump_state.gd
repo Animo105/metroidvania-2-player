@@ -3,8 +3,10 @@ class_name PlayerJumpState
 
 func enter(_previous_state: String) -> void:
 	player.velocity.y = player.jump_velocity * player.jump_multiplier
+	prints(player.name, "jump","(%s)" % player.velocity.y)
 
 func physics_update(delta: float) -> void:
+	
 	if not Input.is_action_pressed("jump") and player.velocity.y < 0.0:
 		player.velocity.y = 0.0
 		fsm.change_state("falling")
