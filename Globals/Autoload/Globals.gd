@@ -59,8 +59,8 @@ func set_up_game():
 
 @rpc("authority", "call_local", "reliable")
 func launch_game():
-	var packed_scene := load("res://Maps/test/starting_test.tscn")
-	var instance : Level = packed_scene.instanciate()
+	var packed_scene :PackedScene= load("res://Maps/test/starting_test.tscn")
+	var instance : Level = packed_scene.instantiate()
 	SceneManager.load_from_node(instance)
 	await instance.ready
 	instance.add_child(smoll_dude)
