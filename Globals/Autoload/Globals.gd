@@ -31,12 +31,6 @@ func get_self_player_node() -> Node2D:
 	else:
 		return big_dude
 
-func _ready() -> void:
-	var packed_smoll_dude : PackedScene = load("res://players/Smoll dude/player_1.tscn")
-	var packed_big_dude : PackedScene = load("res://players/Big dude/player_2.tscn")
-	smoll_dude = packed_smoll_dude.instantiate()
-	big_dude = packed_big_dude.instantiate()
-
 func apply_authority():
 	if is_smoll_dude:
 		big_dude.update_authority(other_peer_id)
@@ -52,7 +46,10 @@ func swap_characters():
 
 @rpc("authority", "call_local", "reliable")
 func launch_game():
-	
+	var packed_smoll_dude : PackedScene = load("res://players/Smoll dude/player_1.tscn")
+	var packed_big_dude : PackedScene = load("res://players/Big dude/player_2.tscn")
+	smoll_dude = packed_smoll_dude.instantiate()
+	big_dude = packed_big_dude.instantiate()
 	is_smoll_dude = true if Network.is_owner else false
 	var peers := multiplayer.get_peers()
 	if peers.size() != 1: return
@@ -65,7 +62,6 @@ func launch_game():
 	prints("Other_id :", other_peer_id)
 	prints("Smoll_dude_authority:",smoll_dude.get_multiplayer_authority())
 	prints("Big_dude_authority:",big_dude.get_multiplayer_authority())
-	
 	LevelManager.change_to_level("res://Maps/test/starting_test.tscn", "StartingPoint")
 
 @rpc("any_peer", "call_remote", "reliable")

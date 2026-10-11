@@ -56,5 +56,5 @@ position = Vector2(14, -128)
 [node name="Sprite2D" type="Sprite2D" parent="Legs" unique_id=967568508]
 texture = ExtResource("8_busc0")
 
-[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=474814777]
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1242011435]
 replication_config = SubResource("SceneReplicationConfig_3t547")

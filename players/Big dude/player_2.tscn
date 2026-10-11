@@ -191,5 +191,5 @@ legs_animation_player = NodePath("../Legs/AnimatedSprite2D")
 body_animation_player = NodePath("../Body/AnimatedSprite2D")
 metadata/_custom_type_script = "uid://dmey1bvo8222e"
 
-[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=731465489]
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=820499964]
 replication_config = SubResource("SceneReplicationConfig_7s10u")

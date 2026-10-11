@@ -3,11 +3,23 @@ class_name BigDude
 
 @onready var camera_2d: Camera2D = $Camera2D
 @onready var fsm: PlayerFSM = $PlayerFSM
+@onready var multiplayer_synchronizer: MultiplayerSynchronizer = $MultiplayerSynchronizer
 
 func update_authority(id : int):
 	set_multiplayer_authority(id, true)
+	print(
+		name,
+		" | Local peer: ", multiplayer.get_unique_id(),
+		" | Authority: ", get_multiplayer_authority(),
+		" | Is authority: ", is_multiplayer_authority()
+	)
+	if multiplayer_synchronizer:
+		print("multiplyer_syncronizer authority: ",get_multiplayer_authority())
 	if camera_2d:
 		camera_2d.enabled = is_multiplayer_authority()
+
+func _ready() -> void:
+	set_multiplayer_authority(get_multiplayer_authority(), true)
 
 func _physics_process(delta: float) -> void:
 	if not is_multiplayer_authority(): return
