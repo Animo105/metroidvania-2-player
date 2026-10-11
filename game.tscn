@@ -7,12 +7,15 @@
 [node name="Game" type="Node2D" unique_id=1579202402]
 script = ExtResource("1_80nbo")
 
+[node name="CameraFollow2D" type="Camera2D" parent="." unique_id=404502275]
+zoom = Vector2(0.6, 0.6)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+script = ExtResource("2_e2o6t")
+metadata/_custom_type_script = "uid://cx11saof0rsk1"
+
 [node name="Maps_container" type="Node2D" parent="." unique_id=1328400153]
 
 [node name="StartingZone" parent="Maps_container" unique_id=2048489762 instance=ExtResource("2_feb5d")]
 
 [node name="PlayersContainer" type="Node2D" parent="." unique_id=2039536744]
-
-[node name="CameraFollow2D" type="Camera2D" parent="." unique_id=406414877]
-script = ExtResource("2_e2o6t")
-metadata/_custom_type_script = "uid://cx11saof0rsk1"

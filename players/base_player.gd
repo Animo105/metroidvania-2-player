@@ -26,6 +26,11 @@ var coyote_timer: float = 0.0
 var fsm : PlayerFSM
 var input_component : PlayerInputComponent
 
+var last_direction : float = 0:
+	set(value):
+		if last_direction != value:
+			last_direction = value
+
 var owner_peer_id: int
 var is_local_player := false
 
@@ -66,4 +71,5 @@ func apply_horizontal_movement( direction: float, delta: float, in_air: bool) ->
 	if direction == 0.0:
 		velocity.x = move_toward(velocity.x, 0.0, decel * delta)
 	else:
+		last_direction = direction
 		velocity.x = move_toward(velocity.x, target_speed, accel * delta)

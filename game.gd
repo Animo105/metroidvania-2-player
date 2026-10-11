@@ -11,11 +11,7 @@ func _ready() -> void:
 	EventBus.player_entered_door.connect(_change_map_request)
 	players_container.add_child(Globals.smoll_dude)
 	players_container.add_child(Globals.big_dude)
-	if Globals.is_smoll_dude:
-		camera_follow_2d.target = Globals.smoll_dude
-	else:
-		camera_follow_2d.target = Globals.big_dude
-	
+	camera_follow_2d.target = Globals.get_self_player_node()
 	# check to init map
 
 func _change_map_request(file : String, object_name : StringName):
