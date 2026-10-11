@@ -14,6 +14,14 @@ var _pending_node_scene : Node = null
 var _pending_free_current_scene : bool = true
 var _scene_change_queued : bool = false
 
+var _data : Dictionary = {}
+
+func clear_data():
+	_data.clear()
+
+func store_data(key : String, data : Variant):
+	_data[key] = data
+
 func _get_current_scene():
 	return get_tree().current_scene
 

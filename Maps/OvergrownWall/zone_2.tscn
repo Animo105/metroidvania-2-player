@@ -1,0 +1,56 @@
+[gd_scene format=4 uid="uid://bvispemk2uhmk"]
+
+[ext_resource type="Script" uid="uid://cmvu7vwdhtwna" path="res://Maps/level.gd" id="1_8tsmu"]
+[ext_resource type="TileSet" uid="uid://742nf250a0yi" path="res://Assets/tileset.tres" id="2_t1n0u"]
+[ext_resource type="Texture2D" uid="uid://doqent1bfqcd5" path="res://Assets/New Piskel-4.png.png" id="3_jenx1"]
+[ext_resource type="Script" uid="uid://ddme071y85g7k" path="res://transition_space.gd" id="4_3m0mn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1srm7"]
+size = Vector2(164, 285)
+
+[node name="Level" type="Node2D" unique_id=1356222869]
+script = ExtResource("1_8tsmu")
+metadata/_custom_type_script = "uid://cmvu7vwdhtwna"
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1748807145]
+tile_map_data = PackedByteArray("AAD5/wAAAQAKAAAAAAD6/wAAAQAKAAAAAAD7/wAAAQAKAAAAAAD8/wAAAQAKAAAAAAD9/wAAAQAKAAAAAAD+/wAAAQAKAAAAAAAAAAAAAQAKAAAAAAD//wAAAQAKAAAAAAABAAAAAQAKAAAAAAADAAAAAQAKAAAAAAACAAAAAQAKAAAAAAAFAAAAAQAKAAAAAAAEAAAAAQAKAAAAAAAGAAAAAQAKAAAAAAAHAAAAAQAKAAAAAAAIAAAAAQAKAAAAAAAJAAAAAQAKAAAAAAAKAAAAAQAKAAAAAAAMAAAAAQAKAAAAAAALAAAAAQAKAAAAAAANAAAAAQAKAAAAAAAOAAAAAQAKAAAAAAD5/wEAAQAJAAMAAAD6/wEAAQAJAAMAAAD7/wEAAQAJAAMAAAD8/wEAAQAJAAMAAAD+/wEAAQAJAAMAAAD9/wEAAQAJAAMAAAAAAAEAAQAJAAMAAAD//wEAAQAJAAMAAAABAAEAAQAJAAMAAAACAAEAAQAJAAMAAAADAAEAAQAJAAMAAAAEAAEAAQAJAAMAAAAFAAEAAQAJAAMAAAAGAAEAAQAJAAMAAAAHAAEAAQAJAAMAAAAIAAEAAQAJAAMAAAAJAAEAAQAJAAMAAAAKAAEAAQAJAAMAAAALAAEAAQAJAAMAAAAMAAEAAQAJAAMAAAANAAEAAQAJAAMAAAAOAAEAAQAJAAMAAAD4/wAAAQAKAAAAAAD4/wEAAQAJAAMAAAD3/wEAAQAJAAMAAAD2/wEAAQAIAAMAAAD2/wAAAQAIAAAAAAD3/wAAAQAKAAAAAAAPAAAAAQAKAAAAAAAPAAEAAQAJAAMAAAAQAAEAAQAJAAMAAAAQAAAAAQAKAAAAAAASAAAAAQALAAAAAAASAAEAAQALAAMAAAARAAEAAQAJAAMAAAARAAAAAQAKAAAAAAA=")
+tile_set = ExtResource("2_t1n0u")
+
+[node name="NewPiskel4_png" type="Sprite2D" parent="." unique_id=467236677]
+position = Vector2(650, -80.00001)
+scale = Vector2(4, 4.9375)
+texture = ExtResource("3_jenx1")
+flip_h = true
+
+[node name="NewPiskel4_png2" type="Sprite2D" parent="." unique_id=1967792877]
+position = Vector2(523, -78)
+scale = Vector2(4, 4.9375)
+texture = ExtResource("3_jenx1")
+flip_h = true
+
+[node name="NewPiskel4_png3" type="Sprite2D" parent="." unique_id=563823008]
+position = Vector2(409, -83.00001)
+scale = Vector2(4, 4.9375)
+texture = ExtResource("3_jenx1")
+flip_h = true
+
+[node name="NewPiskel4_png4" type="Sprite2D" parent="." unique_id=2085707939]
+position = Vector2(727, -82.00001)
+scale = Vector2(4, 4.9375)
+texture = ExtResource("3_jenx1")
+flip_h = true
+
+[node name="Zone2Right" type="Area2D" parent="." unique_id=1438996308 node_paths=PackedStringArray("spawn_point")]
+position = Vector2(1038, -66)
+script = ExtResource("4_3m0mn")
+toward_scene_path = "uid://rxpd4cf0p876"
+toward_transition_space_name = "StartingZoneLeft"
+spawn_point = NodePath("CollisionShape2D/Marker2D")
+metadata/_custom_type_script = "uid://ddme071y85g7k"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Zone2Right" unique_id=1980288591]
+position = Vector2(72, -74.5)
+shape = SubResource("RectangleShape2D_1srm7")
+
+[node name="Marker2D" type="Marker2D" parent="Zone2Right/CollisionShape2D" unique_id=1069651119]
+position = Vector2(-202, 49.5)

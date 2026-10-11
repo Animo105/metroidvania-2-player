@@ -21,6 +21,7 @@ Network="*uid://cqnicm0waqky0"
 SceneManager="*uid://dkwvepjpje67v"
 EventBus="*uid://d1l084dp8ufhr"
 Globals="*uid://b5orlh6m4jxgv"
+LevelManager="*uid://6uj0opj10qqs"
 
 [display]
 
@@ -36,6 +37,10 @@ folder_colors={
 "res://Globals/": "purple",
 "res://UI/": "green"
 }
+
+[global_group]
+
+TransitionPoint=""
 
 [input]
 

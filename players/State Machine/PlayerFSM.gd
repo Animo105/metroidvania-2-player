@@ -1,6 +1,6 @@
 extends Node
 class_name PlayerFSM
-signal on_state_change(String)
+signal on_state_change(new_state : String)
 
 var states : Dictionary[String, PlayerState] = {}
 var _current_state : PlayerState
@@ -29,7 +29,6 @@ func update(delta:float)->void:
 	_current_state.update(delta)
 
 func change_state(state_name : String)->void:
-	print(state_name)
 	if states.has(state_name):
 		if _current_state_key == state_name:
 			return
