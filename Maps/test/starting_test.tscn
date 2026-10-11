@@ -9,6 +9,7 @@ size = Vector2(176, 275)
 
 [node name="StartingZone" type="Node2D" unique_id=2048489762]
 script = ExtResource("1_7u8va")
+level_id = "testing_zone_1"
 metadata/_custom_type_script = "uid://cmvu7vwdhtwna"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2119189221]

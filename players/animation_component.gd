@@ -23,7 +23,6 @@ func update_current_animation(new_animation : String):
 	current_animation = new_animation
 	legs_animation_player.play(new_animation)
 	body_animation_player.play(new_animation)
-	print("playing ", new_animation)
 
 func _process(delta: float) -> void:
 	if not player: return

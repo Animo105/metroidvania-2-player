@@ -12,6 +12,11 @@
 radius = 25.0
 height = 170.0
 
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_3t547"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
 [node name="Player1" type="CharacterBody2D" unique_id=173757113]
 collision_layer = 4
 script = ExtResource("1_iapfj")
@@ -50,3 +55,6 @@ position = Vector2(14, -128)
 
 [node name="Sprite2D" type="Sprite2D" parent="Legs" unique_id=967568508]
 texture = ExtResource("8_busc0")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=474814777]
+replication_config = SubResource("SceneReplicationConfig_3t547")

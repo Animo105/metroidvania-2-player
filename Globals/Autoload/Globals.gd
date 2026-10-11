@@ -59,14 +59,16 @@ func launch_game():
 	Globals.self_peer_id= multiplayer.get_unique_id()
 	Globals.other_peer_id = peers[0]
 	apply_authority()
+	print("Is character smoll guy: ", is_smoll_dude)
 	LevelManager.change_to_level("res://Maps/test/starting_test.tscn", "StartingPoint")
 
 @rpc("any_peer", "call_remote", "reliable")
 func sync_map(map_id : String):
+	print("Recived position update: ", map_id)
 	other_map_id = map_id
 	var other_player := get_other_player_node()
 	if other_map_id == self_map_id:
-		if other_player.get_parent() != null:
+		if other_player.get_parent() == null:
 			LevelManager.current_level.add_child(other_player)
 	else:
 		if other_player.get_parent() != null:

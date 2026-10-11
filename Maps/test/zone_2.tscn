@@ -10,6 +10,7 @@ size = Vector2(164, 285)
 
 [node name="Level" type="Node2D" unique_id=1356222869]
 script = ExtResource("1_8tsmu")
+level_id = "testing_zone_2"
 metadata/_custom_type_script = "uid://cmvu7vwdhtwna"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1748807145]
