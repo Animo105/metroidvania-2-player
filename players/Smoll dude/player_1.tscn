@@ -12,24 +12,6 @@
 radius = 25.0
 height = 170.0
 
-[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_n4x3h"]
-
-[sub_resource type="Animation" id="Animation_4unic"]
-resource_name = "Falling"
-
-[sub_resource type="Animation" id="Animation_3t547"]
-resource_name = "Idle"
-
-[sub_resource type="Animation" id="Animation_wti5m"]
-resource_name = "Walk"
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_busc0"]
-_data = {
-&"Falling": SubResource("Animation_4unic"),
-&"Idle": SubResource("Animation_3t547"),
-&"Walk": SubResource("Animation_wti5m")
-}
-
 [node name="Player1" type="CharacterBody2D" unique_id=173757113]
 collision_layer = 4
 script = ExtResource("1_iapfj")
@@ -56,15 +38,6 @@ metadata/_custom_type_script = "uid://cu63p0oseesin"
 [node name="Jump" type="Node" parent="PlayerFSM" unique_id=2056264528]
 script = ExtResource("6_wti5m")
 metadata/_custom_type_script = "uid://cyvhh480oqr2k"
-
-[node name="AnimationTree" type="AnimationTree" parent="." unique_id=23450888]
-root_node = NodePath(".")
-tree_root = SubResource("AnimationNodeBlendSpace2D_n4x3h")
-anim_player = NodePath("AnimationPlayer")
-parameters/blend_position = Vector2(0, 0)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimationTree" unique_id=1643099259]
-libraries/ = SubResource("AnimationLibrary_busc0")
 
 [node name="Body" type="Node2D" parent="." unique_id=922456736]
 position = Vector2(14, -128)
