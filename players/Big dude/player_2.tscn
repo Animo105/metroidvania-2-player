@@ -188,9 +188,8 @@ legs_animation_player = NodePath("../Legs/AnimatedSprite2D")
 body_animation_player = NodePath("../Body/AnimatedSprite2D")
 metadata/_custom_type_script = "uid://dmey1bvo8222e"
 
-[node name="PlayerInputComponent" type="Node" parent="." unique_id=41953796 node_paths=PackedStringArray("player")]
+[node name="PlayerInputComponent" type="Node" parent="." unique_id=41953796]
 script = ExtResource("11_j1lu0")
-player = NodePath("..")
 metadata/_custom_type_script = "uid://bk6flpn2jjgym"
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=820499964]

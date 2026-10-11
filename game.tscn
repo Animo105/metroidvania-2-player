@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dj50l6yyykdmk"]
+
+[ext_resource type="Script" uid="uid://deswn85838kvm" path="res://game.gd" id="1_80nbo"]
+[ext_resource type="Script" uid="uid://cx11saof0rsk1" path="res://players/Camera/camera_follow.gd" id="2_e2o6t"]
+[ext_resource type="PackedScene" uid="uid://rxpd4cf0p876" path="res://Maps/test/starting_test.tscn" id="2_feb5d"]
+
+[node name="Game" type="Node2D" unique_id=1579202402]
+script = ExtResource("1_80nbo")
+
+[node name="Maps_container" type="Node2D" parent="." unique_id=1328400153]
+
+[node name="StartingZone" parent="Maps_container" unique_id=2048489762 instance=ExtResource("2_feb5d")]
+
+[node name="PlayersContainer" type="Node2D" parent="." unique_id=2039536744]
+
+[node name="CameraFollow2D" type="Camera2D" parent="." unique_id=406414877]
+script = ExtResource("2_e2o6t")
+metadata/_custom_type_script = "uid://cx11saof0rsk1"

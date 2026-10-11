@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cmvu7vwdhtwna" path="res://Maps/level.gd" id="1_8tsmu"]
 [ext_resource type="TileSet" uid="uid://742nf250a0yi" path="res://Assets/tileset.tres" id="2_t1n0u"]
 [ext_resource type="Texture2D" uid="uid://doqent1bfqcd5" path="res://Assets/New Piskel-4.png.png" id="3_jenx1"]
-[ext_resource type="Script" uid="uid://ddme071y85g7k" path="res://transition_space.gd" id="4_3m0mn"]
+[ext_resource type="Script" uid="uid://ddme071y85g7k" path="res://Globals/transition_space.gd" id="4_3m0mn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1srm7"]
 size = Vector2(164, 285)

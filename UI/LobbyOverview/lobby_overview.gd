@@ -52,3 +52,7 @@ func _on_button_kick_player_pressed() -> void:
 	var peers = multiplayer.get_peers()
 	if peers.size() == 1:
 		Network.kick_from_lobby.rpc_id(peers[0])
+
+
+func _on_button_pressed() -> void:
+	update_lobby()

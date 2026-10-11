@@ -76,10 +76,15 @@ text = "LAUNCH_GAME"
 layout_mode = 2
 text = "KICK_OTHER_PLAYER"
 
+[node name="Button" type="Button" parent="PanelContainer/CenterContainer/Panel/MarginContainer/VBoxContainer/HostButtonSet" unique_id=966895360]
+layout_mode = 2
+text = "force update"
+
 [node name="Quit" type="Button" parent="PanelContainer/CenterContainer/Panel/MarginContainer/VBoxContainer" unique_id=1876838246]
 layout_mode = 2
 text = "QUIT"
 
 [connection signal="pressed" from="PanelContainer/CenterContainer/Panel/MarginContainer/VBoxContainer/HostButtonSet/ButtonStartGame" to="." method="_on_button_start_game_pressed"]
 [connection signal="pressed" from="PanelContainer/CenterContainer/Panel/MarginContainer/VBoxContainer/HostButtonSet/ButtonKickPlayer" to="." method="_on_button_kick_player_pressed"]
+[connection signal="pressed" from="PanelContainer/CenterContainer/Panel/MarginContainer/VBoxContainer/HostButtonSet/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="PanelContainer/CenterContainer/Panel/MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

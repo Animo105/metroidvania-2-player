@@ -4,6 +4,9 @@ class_name PlayerState
 static var player : Player
 var fsm : PlayerFSM
 
+var input: PlayerInputComponent:
+	get(): return player.input_component
+
 func enter(_previous_state : String)-> void:
 	pass
 

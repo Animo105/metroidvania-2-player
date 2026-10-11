@@ -6,4 +6,4 @@ func _on_button_pressed() -> void:
 
 
 func _on_button_2_pressed() -> void:
-	LevelManager.change_to_level("res://Maps/test/starting_test.tscn", "StartingPoint")
+	SceneManager.load_from_file("res://game.tscn")

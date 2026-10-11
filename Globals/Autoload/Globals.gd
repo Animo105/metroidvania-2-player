@@ -33,18 +33,10 @@ func get_self_player_node() -> Node2D:
 	else:
 		return big_dude
 
-func apply_authority():
-	if is_smoll_dude:
-		big_dude.update_authority(other_peer_id)
-		smoll_dude.update_authority(self_peer_id)
-	else:
-		smoll_dude.update_authority(other_peer_id)
-		big_dude.update_authority(self_peer_id)
-
 @rpc("any_peer", "call_local", "reliable")
 func swap_characters():
 	is_smoll_dude = not is_smoll_dude
-	apply_authority()
+	pass
 
 func set_up_game():
 	is_smoll_dude = true
@@ -59,12 +51,7 @@ func set_up_game():
 
 @rpc("authority", "call_local", "reliable")
 func launch_game():
-	var packed_scene :PackedScene= load("res://Maps/test/starting_test.tscn")
-	var instance : Level = packed_scene.instantiate()
-	SceneManager.load_from_node(instance)
-	await instance.ready
-	instance.add_child(smoll_dude)
-	instance.add_child(big_dude)
+	SceneManager.load_from_file("res://game.tscn")
 
 @rpc("authority", "call_local", "reliable")
 func set_up_player(smoll_guy_id : int, big_guy_id : int):
