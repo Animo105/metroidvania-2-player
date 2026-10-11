@@ -45,7 +45,7 @@ func _on_quit_pressed() -> void:
 func _on_button_start_game_pressed() -> void:
 	if not Network.is_owner : return
 	if  Steam.getNumLobbyMembers(Network.lobby_id) != 2: return
-	Globals.launch_game.rpc()
+	Globals.set_up_game()
 
 func _on_button_kick_player_pressed() -> void:
 	if not Network.is_owner : return

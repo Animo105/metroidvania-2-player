@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://cyvhh480oqr2k" path="res://players/State Machine/CommonStates/player_jump_state.gd" id="6_wti5m"]
 [ext_resource type="Texture2D" uid="uid://u7w4iqjgaqfe" path="res://Assets/SmollDude/Smoll_guy_body.png" id="7_wti5m"]
 [ext_resource type="Texture2D" uid="uid://6gk2318b4o6v" path="res://Assets/SmollDude/Smoll_guy_leg.png" id="8_busc0"]
+[ext_resource type="Script" uid="uid://bk6flpn2jjgym" path="res://players/input_component.gd" id="8_wti5m"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iapfj"]
 radius = 25.0
@@ -24,9 +25,6 @@ script = ExtResource("1_iapfj")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1442353546]
 position = Vector2(-2, -85)
 shape = SubResource("CapsuleShape2D_iapfj")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1201717140]
-position = Vector2(0, -71)
 
 [node name="PlayerFSM" type="Node" parent="." unique_id=104004896]
 script = ExtResource("3_jf02m")
@@ -55,6 +53,11 @@ position = Vector2(14, -128)
 
 [node name="Sprite2D" type="Sprite2D" parent="Legs" unique_id=967568508]
 texture = ExtResource("8_busc0")
+
+[node name="PlayerInputComponent" type="Node" parent="." unique_id=1654601535 node_paths=PackedStringArray("player")]
+script = ExtResource("8_wti5m")
+player = NodePath("..")
+metadata/_custom_type_script = "uid://bk6flpn2jjgym"
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1242011435]
 replication_config = SubResource("SceneReplicationConfig_3t547")

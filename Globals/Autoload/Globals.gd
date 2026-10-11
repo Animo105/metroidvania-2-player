@@ -4,10 +4,6 @@ enum Characters {
 	SMOLL_GUY,
 	BIG_GUY,
 }
-
-func set_multiplayer_priority():
-	pass
-
 var smoll_dude : SmollDude
 var big_dude : BigDude
 
@@ -18,6 +14,12 @@ var other_peer_id : int
 
 var self_map_id : String
 var other_map_id : String
+
+func _ready() -> void:
+	var packed_smoll_dude : PackedScene = load("res://players/Smoll dude/player_1.tscn")
+	var packed_big_dude : PackedScene = load("res://players/Big dude/player_2.tscn")
+	smoll_dude = packed_smoll_dude.instantiate()
+	big_dude = packed_big_dude.instantiate()
 
 func get_other_player_node() -> Node2D:
 	if is_smoll_dude:
@@ -44,25 +46,26 @@ func swap_characters():
 	is_smoll_dude = not is_smoll_dude
 	apply_authority()
 
+func set_up_game():
+	is_smoll_dude = true
+	var peers := multiplayer.get_peers()
+	if peers.size() != 1:
+		print("Cant start game: peer number is wrong")
+		return
+	self_peer_id = multiplayer.get_unique_id()
+	other_peer_id = peers[0]
+	set_up_player.rpc(self_peer_id, other_peer_id)
+	launch_game.rpc()
+
 @rpc("authority", "call_local", "reliable")
 func launch_game():
-	var packed_smoll_dude : PackedScene = load("res://players/Smoll dude/player_1.tscn")
-	var packed_big_dude : PackedScene = load("res://players/Big dude/player_2.tscn")
-	smoll_dude = packed_smoll_dude.instantiate()
-	big_dude = packed_big_dude.instantiate()
-	is_smoll_dude = true if Network.is_owner else false
-	var peers := multiplayer.get_peers()
-	if peers.size() != 1: return
-	Globals.self_peer_id= multiplayer.get_unique_id()
-	Globals.other_peer_id = peers[0]
-	apply_authority()
-	print("LAUNCHING GAME!!")
-	prints("is_smoll_guy:", is_smoll_dude)
-	prints("Self_id :", self_peer_id)
-	prints("Other_id :", other_peer_id)
-	prints("Smoll_dude_authority:",smoll_dude.get_multiplayer_authority())
-	prints("Big_dude_authority:",big_dude.get_multiplayer_authority())
-	LevelManager.change_to_level("res://Maps/test/starting_test.tscn", "StartingPoint")
+	SceneManager.load_from_file("res://Maps/test/starting_test.tscn")
+
+@rpc("authority", "call_local", "reliable")
+func set_up_player(smoll_guy_id : int, big_guy_id : int):
+	is_smoll_dude = (smoll_guy_id == multiplayer.get_unique_id())
+	smoll_dude.setup_player(smoll_guy_id)
+	big_dude.setup_player(big_guy_id)
 
 @rpc("any_peer", "call_remote", "reliable")
 func sync_map(map_id : String):

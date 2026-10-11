@@ -1,4 +1,4 @@
-@abstract extends CharacterBody2D
+extends CharacterBody2D
 class_name Player
 
 @export_group("Movement")
@@ -22,6 +22,37 @@ var airborn_multiplier: float = 1.0
 var jump_multiplier: float = 1.0
 
 var coyote_timer: float = 0.0
+
+var fsm : PlayerFSM
+var input_component : PlayerInputComponent
+
+var owner_peer_id: int
+var is_local_player := false
+
+func _ready() -> void:
+	for child in get_children():
+		if child is PlayerFSM:
+			fsm = child
+		elif child is PlayerInputComponent:
+			input_component = child
+
+func _physics_process(delta: float) -> void:
+	if multiplayer.is_server():
+		fsm.physics_update(delta)
+	elif is_local_player:
+		fsm.physics_update(delta)
+
+func _process(delta: float) -> void:
+	if multiplayer.is_server():
+		fsm.update(delta)
+	elif is_local_player:
+		fsm.update(delta)
+
+func setup_player(peer_id: int) -> void:
+	owner_peer_id = peer_id
+	is_local_player = (
+		multiplayer.get_unique_id() == owner_peer_id
+	)
 
 func apply_horizontal_movement( direction: float, delta: float, in_air: bool) -> void:
 	var target_speed: float = 0

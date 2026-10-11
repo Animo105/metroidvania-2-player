@@ -4,12 +4,17 @@ var current_level : Level
 
 
 func change_to_level(file : String, exit_name : StringName):
-	var packed_scene : PackedScene = load(file)
+	print("Fuck yourself")
+	print("ain't doing that shit yet")
+	return
 	
+	var packed_scene : PackedScene = load(file)
 	var instance : Level = packed_scene.instantiate()
 	if not instance : return
+	
 	var other_player_node = Globals.get_other_player_node()
 	var self_player_node = Globals.get_self_player_node()
+	
 	if other_player_node.get_parent():
 		other_player_node.get_parent().remove_child(other_player_node)
 	if self_player_node.get_parent():
