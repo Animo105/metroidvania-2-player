@@ -13,11 +13,6 @@
 radius = 25.0
 height = 170.0
 
-[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_3t547"]
-properties/0/path = NodePath(".:position")
-properties/0/spawn = true
-properties/0/replication_mode = 1
-
 [node name="Player1" type="CharacterBody2D" unique_id=173757113]
 collision_layer = 4
 script = ExtResource("1_iapfj")
@@ -59,6 +54,3 @@ texture = ExtResource("8_busc0")
 [node name="PlayerInputComponent" type="Node" parent="." unique_id=1654601535]
 script = ExtResource("8_wti5m")
 metadata/_custom_type_script = "uid://bk6flpn2jjgym"
-
-[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1242011435]
-replication_config = SubResource("SceneReplicationConfig_3t547")
