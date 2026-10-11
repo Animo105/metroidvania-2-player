@@ -35,6 +35,7 @@ func _ready() -> void:
 			fsm = child
 		elif child is PlayerInputComponent:
 			input_component = child
+	is_local_player = (multiplayer.get_unique_id() == owner_peer_id)
 
 func _physics_process(delta: float) -> void:
 	if multiplayer.is_server():
@@ -50,9 +51,6 @@ func _process(delta: float) -> void:
 
 func setup_player(peer_id: int) -> void:
 	owner_peer_id = peer_id
-	is_local_player = (
-		multiplayer.get_unique_id() == owner_peer_id
-	)
 
 func apply_horizontal_movement( direction: float, delta: float, in_air: bool) -> void:
 	var target_speed: float = 0
