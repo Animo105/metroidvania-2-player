@@ -40,6 +40,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if multiplayer.is_server():
+		print("physics process ", name)
 		fsm.physics_update(delta)
 	elif is_local_player:
 		fsm.physics_update(delta)
@@ -55,12 +56,10 @@ func setup_player(peer_id: int) -> void:
 
 func apply_horizontal_movement( direction: float, delta: float, in_air: bool) -> void:
 	var target_speed: float = 0
-	
 	if in_air:
 		target_speed = direction * air_speed * speed_multiplier * airborn_multiplier
 	else:
 		target_speed = direction * move_speed * speed_multiplier
-	
 	var accel = air_acceleration if in_air else acceleration
 	var decel = air_deceleration if in_air else deceleration
 	

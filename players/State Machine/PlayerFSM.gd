@@ -8,9 +8,10 @@ var _current_state_key : String
 
 
 func _ready() -> void:
-	PlayerState.player = get_parent()
+	var player := get_parent()
 	for child in get_children():
 		if child is PlayerState:
+			child.player = player
 			child.fsm = self
 			states[child.name.to_lower()] = child
 			

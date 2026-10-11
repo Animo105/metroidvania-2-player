@@ -1,7 +1,7 @@
 @abstract extends Node
 class_name PlayerState
 
-static var player : Player
+var player : Player
 var fsm : PlayerFSM
 
 var input: PlayerInputComponent:
