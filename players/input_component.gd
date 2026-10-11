@@ -20,6 +20,8 @@ func _process(_delta: float) -> void:
 		jump_pressed = Input.is_action_pressed("jump")
 
 func _physics_process(_delta: float) -> void:
+	if Input.is_action_just_pressed("jump"):
+		print("jumped")
 	if not multiplayer.is_server():
 		submit_inputs.rpc_id(1, move_direction, jump_pressed)
 

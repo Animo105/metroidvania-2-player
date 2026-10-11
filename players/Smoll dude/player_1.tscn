@@ -22,6 +22,8 @@ properties/0/replication_mode = 1
 collision_layer = 4
 script = ExtResource("1_iapfj")
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=666235583]
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1442353546]
 position = Vector2(-2, -85)
 shape = SubResource("CapsuleShape2D_iapfj")
