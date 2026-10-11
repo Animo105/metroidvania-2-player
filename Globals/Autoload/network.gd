@@ -40,7 +40,7 @@ func _on_lobby_created(connect_result : int, steam_lobby_id : int):
 func _on_lobby_joined(steam_lobby_id : int, _permissions : int, _locked : bool, response : int):
 	if response != Steam.CHAT_ROOM_ENTER_RESPONSE_SUCCESS: return
 	lobby_id = steam_lobby_id
-	if not multiplayer.peer:
+	if not peer:
 		peer = SteamMultiplayerPeer.new()
 		peer.server_relay = true
 		peer.create_client(Steam.getLobbyOwner(steam_lobby_id))

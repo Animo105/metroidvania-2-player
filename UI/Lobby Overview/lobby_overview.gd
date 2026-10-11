@@ -26,7 +26,7 @@ func _set_names_with_steam():
 	for i in range(Steam.getNumLobbyMembers(Network.lobby_id)):
 		var steam_id : int = Steam.getLobbyMemberByIndex(Network.lobby_id, i)
 		var steam_name : String = Steam.getFriendPersonaName(steam_id)
-		if steam_id == Network.owner_id:
+		if steam_id == Steam.getSteamID():
 			label_player_1.text = "%s (%s)" % [steam_name, TranslationServer.translate("HOST")]
 		else:
 			label_player_2.text = steam_name

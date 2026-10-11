@@ -58,15 +58,3 @@ func set_up_player(smoll_guy_id : int, big_guy_id : int):
 	is_smoll_dude = (smoll_guy_id == multiplayer.get_unique_id())
 	smoll_dude.setup_player(smoll_guy_id)
 	big_dude.setup_player(big_guy_id)
-
-@rpc("any_peer", "call_remote", "reliable")
-func sync_map(map_id : String):
-	print("Recived position update: ", map_id)
-	other_map_id = map_id
-	var other_player := get_other_player_node()
-	if other_map_id == self_map_id:
-		if other_player.get_parent() == null:
-			LevelManager.current_level.add_child(other_player)
-	else:
-		if other_player.get_parent() != null:
-			other_player.get_parent().remove_child(other_player)
