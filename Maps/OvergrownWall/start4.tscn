@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://c0670lnycolb6"]
+
+[ext_resource type="Script" uid="uid://cmvu7vwdhtwna" path="res://Maps/level.gd" id="1_b4bp7"]
+
+[node name="Start4" type="Node2D" unique_id=353394539]
+z_index = 4096
+z_as_relative = false
+script = ExtResource("1_b4bp7")
+metadata/_custom_type_script = "uid://cmvu7vwdhtwna"
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1147391759]
