@@ -29,15 +29,17 @@ shape = SubResource("RectangleShape2D_6moqk")
 [node name="Marker2D" type="Marker2D" parent="TransitionSpace" unique_id=521746321]
 position = Vector2(-2245, 1493)
 
-[node name="TransitionSpace2" type="Area2D" parent="." unique_id=1446684806]
+[node name="debut_start_3" type="Area2D" parent="." unique_id=1446684806]
 script = ExtResource("3_4622h")
+toward_scene_path = "uid://d1g1qkrl11vls"
+toward_object_name = "fin_start_2"
 metadata/_custom_type_script = "uid://ddme071y85g7k"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TransitionSpace2" unique_id=613580255]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="debut_start_3" unique_id=613580255]
 position = Vector2(-2161.5, -831.125)
 shape = SubResource("RectangleShape2D_6moqk")
 
-[node name="Marker2D" type="Marker2D" parent="TransitionSpace2" unique_id=459722447]
+[node name="Marker2D" type="Marker2D" parent="debut_start_3" unique_id=459722447]
 position = Vector2(-1936, -761)
 
 [node name="NewPiskel4_png" type="Sprite2D" parent="." unique_id=316441186]

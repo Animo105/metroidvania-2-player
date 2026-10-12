@@ -13,7 +13,7 @@ z_as_relative = false
 script = ExtResource("1_voixe")
 level_id = "weapon_rooms"
 limit_left = -2000
-limit_right = 2000
+limit_right = 3000
 metadata/_custom_type_script = "uid://cmvu7vwdhtwna"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=891486959]
@@ -33,15 +33,17 @@ shape = SubResource("RectangleShape2D_6moqk")
 [node name="Marker2D" type="Marker2D" parent="debut_start_2" unique_id=223621454]
 position = Vector2(-1568, 563)
 
-[node name="TransitionSpace2" type="Area2D" parent="." unique_id=1164429025]
+[node name="fin_start2" type="Area2D" parent="." unique_id=1164429025]
 script = ExtResource("3_5i6tx")
+toward_scene_path = "uid://i63akgukcrmj"
+toward_object_name = "debut_start_3"
 metadata/_custom_type_script = "uid://ddme071y85g7k"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TransitionSpace2" unique_id=1139174009]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fin_start2" unique_id=1139174009]
 position = Vector2(2301, 447)
 shape = SubResource("RectangleShape2D_6moqk")
 
-[node name="Marker2D" type="Marker2D" parent="TransitionSpace2" unique_id=263012471]
+[node name="Marker2D" type="Marker2D" parent="fin_start2" unique_id=263012471]
 position = Vector2(2127, 558)
 
 [node name="Label" type="Label" parent="." unique_id=1692501995]

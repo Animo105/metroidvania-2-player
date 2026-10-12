@@ -28,7 +28,7 @@ func _change_map_request(peer_id : int, file : String, object_name : StringName)
 	if peer_id != multiplayer.get_unique_id() : return
 	
 	var packed_scene : PackedScene = load(file)
-	var new_map : Level = packed_scene.instantiate()
+dddddddd	var new_map : Level = packed_scene.instantiate()
 	if not new_map : 
 		push_error("File ",file, "couldn't be instantiated")
 		return
