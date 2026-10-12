@@ -58,7 +58,6 @@ func _process(delta: float) -> void:
 
 func setup_player(peer_id: int) -> void:
 	owner_peer_id = peer_id
-
 func apply_horizontal_movement( direction: float, delta: float, in_air: bool) -> void:
 	var target_speed: float = 0
 	if in_air:
@@ -67,7 +66,7 @@ func apply_horizontal_movement( direction: float, delta: float, in_air: bool) ->
 		target_speed = direction * move_speed * speed_multiplier
 	var accel = air_acceleration if in_air else acceleration
 	var decel = air_deceleration if in_air else deceleration
-	
+
 	if direction == 0.0:
 		velocity.x = 0
 	else:
