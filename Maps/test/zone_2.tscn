@@ -41,17 +41,17 @@ scale = Vector2(4, 4.9375)
 texture = ExtResource("3_jenx1")
 flip_h = true
 
-[node name="Zone2Right" type="Area2D" parent="." unique_id=1438996308 node_paths=PackedStringArray("spawn_point")]
+[node name="Right" type="Area2D" parent="." unique_id=1438996308 node_paths=PackedStringArray("spawn_point")]
 position = Vector2(1038, -66)
 script = ExtResource("4_3m0mn")
 toward_scene_path = "uid://rxpd4cf0p876"
-toward_transition_space_name = &"StartingZoneLeft"
+toward_object_name = "Left"
 spawn_point = NodePath("CollisionShape2D/Marker2D")
 metadata/_custom_type_script = "uid://ddme071y85g7k"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Zone2Right" unique_id=1980288591]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right" unique_id=1980288591]
 position = Vector2(72, -74.5)
 shape = SubResource("RectangleShape2D_1srm7")
 
-[node name="Marker2D" type="Marker2D" parent="Zone2Right/CollisionShape2D" unique_id=1069651119]
+[node name="Marker2D" type="Marker2D" parent="Right/CollisionShape2D" unique_id=1069651119]
 position = Vector2(-200, 138.5)

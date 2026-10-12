@@ -144,6 +144,7 @@ properties/0/replication_mode = 1
 [node name="Player2" type="CharacterBody2D" unique_id=559135851]
 collision_layer = 4
 script = ExtResource("1_hg2n7")
+jump_velocity = -1000.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2024860396]
 position = Vector2(0, -101)

@@ -1,7 +1,7 @@
 extends Camera2D
 class_name CameraFollow2D
 
-const FORWARD_OFFSET :int = 80
+const FORWARD_OFFSET :int = 50
 
 var target : Player
 

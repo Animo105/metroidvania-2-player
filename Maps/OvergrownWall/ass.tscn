@@ -1,9 +1,0 @@
-[gd_scene format=3 uid="uid://b60vqidnfr4rj"]
-
-[ext_resource type="Script" uid="uid://cmvu7vwdhtwna" path="res://Maps/level.gd" id="1_6pacp"]
-
-[node name="Ass" type="Node2D" unique_id=2085510256]
-script = ExtResource("1_6pacp")
-metadata/_custom_type_script = "uid://cmvu7vwdhtwna"
-
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2053051948]
