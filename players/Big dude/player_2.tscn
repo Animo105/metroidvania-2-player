@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bnxw3j6q1h1q3" path="res://players/State Machine/PlayerFSM.gd" id="3_0uxui"]
 [ext_resource type="Script" uid="uid://n4u6r3mqufj1" path="res://players/State Machine/CommonStates/player_grounded_state.gd" id="4_3h33q"]
 [ext_resource type="Script" uid="uid://cu63p0oseesin" path="res://players/State Machine/CommonStates/player_falling_state.gd" id="5_pqacr"]
+[ext_resource type="Script" uid="uid://bhiywsdpg0oih" path="res://players/State Machine/CommonStates/player_locked_state.gd" id="6_7s10u"]
 [ext_resource type="Script" uid="uid://cyvhh480oqr2k" path="res://players/State Machine/CommonStates/player_jump_state.gd" id="6_ix8db"]
 [ext_resource type="Texture2D" uid="uid://18p3fexry1gk" path="res://Assets/BigDude/big_guy_sprite_sheet.png" id="6_pqacr"]
 [ext_resource type="Script" uid="uid://dmey1bvo8222e" path="res://players/animation_component.gd" id="10_7s10u"]
@@ -313,6 +314,10 @@ metadata/_custom_type_script = "uid://cu63p0oseesin"
 [node name="Jump" type="Node" parent="PlayerFSM" unique_id=915454675]
 script = ExtResource("6_ix8db")
 metadata/_custom_type_script = "uid://cyvhh480oqr2k"
+
+[node name="Locked" type="Node" parent="PlayerFSM" unique_id=2055817565]
+script = ExtResource("6_7s10u")
+metadata/_custom_type_script = "uid://bhiywsdpg0oih"
 
 [node name="Sprites" type="Node2D" parent="." unique_id=1186743290]
 position = Vector2(0, -128)

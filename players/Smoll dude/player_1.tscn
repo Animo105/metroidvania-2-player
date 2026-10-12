@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://n4u6r3mqufj1" path="res://players/State Machine/CommonStates/player_grounded_state.gd" id="4_4unic"]
 [ext_resource type="Script" uid="uid://cu63p0oseesin" path="res://players/State Machine/CommonStates/player_falling_state.gd" id="5_3t547"]
 [ext_resource type="Texture2D" uid="uid://c5kpvv10mqa6a" path="res://Assets/SmollDude/smoll_guy_sprite_sheet.png" id="6_busc0"]
+[ext_resource type="Script" uid="uid://bhiywsdpg0oih" path="res://players/State Machine/CommonStates/player_locked_state.gd" id="6_o12f1"]
 [ext_resource type="Script" uid="uid://cyvhh480oqr2k" path="res://players/State Machine/CommonStates/player_jump_state.gd" id="6_wti5m"]
 [ext_resource type="Script" uid="uid://bk6flpn2jjgym" path="res://players/input_component.gd" id="8_wti5m"]
 [ext_resource type="Script" uid="uid://dmey1bvo8222e" path="res://players/animation_component.gd" id="15_10rcv"]
@@ -309,6 +310,10 @@ metadata/_custom_type_script = "uid://cu63p0oseesin"
 [node name="Jump" type="Node" parent="PlayerFSM" unique_id=2056264528]
 script = ExtResource("6_wti5m")
 metadata/_custom_type_script = "uid://cyvhh480oqr2k"
+
+[node name="Locked" type="Node" parent="PlayerFSM" unique_id=1845978703]
+script = ExtResource("6_o12f1")
+metadata/_custom_type_script = "uid://bhiywsdpg0oih"
 
 [node name="Sprites" type="Node2D" parent="." unique_id=922456736]
 position = Vector2(0, -128)

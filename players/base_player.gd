@@ -7,6 +7,12 @@ var input_component : PlayerInputComponent
 var owner_peer_id: int
 var is_local_player := false
 
+var allow_movement : bool = true :
+	set(value):
+		allow_movement = value
+		if not allow_movement:
+			fsm.change_state("locked")
+
 func _ready() -> void:
 	for child in get_children():
 		if child is PlayerFSM:
