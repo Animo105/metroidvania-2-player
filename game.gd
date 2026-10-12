@@ -53,7 +53,7 @@ func _change_map_request(peer_id : int, file : String, object_name : StringName)
 		print("found the node")
 		if node is TransitionSpace:
 			print("exit through transition space")
-			self_player.global_position = node.spawn_point.global_position
+			node.set_player_position(self_player)
 			camera_follow_2d.reset_smoothing()
 			break
 		elif node is Marker2D:
