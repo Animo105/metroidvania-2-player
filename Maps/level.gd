@@ -21,6 +21,10 @@ class_name Level
 		limit_bottom = value
 		queue_redraw()
 
+func _ready() -> void:
+	z_index = 4096
+	z_as_relative = false
+	queue_redraw() 
 func _draw() -> void:
 	if not Engine.is_editor_hint():
 		return

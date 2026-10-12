@@ -15,6 +15,8 @@ size = Vector2(119.5, 264.75)
 size = Vector2(79, 194)
 
 [node name="Start_1" type="Node2D" unique_id=1400640373]
+z_index = 4096
+z_as_relative = false
 script = ExtResource("1_rkh4m")
 level_id = "Starting_point"
 limit_left = -1150
@@ -45,15 +47,17 @@ shape = SubResource("RectangleShape2D_xj87n")
 [node name="Marker2D" type="Marker2D" parent="Right" unique_id=504736215]
 position = Vector2(-8192, -526)
 
-[node name="TransitionSpace" type="Area2D" parent="." unique_id=2043444848]
+[node name="fin_start_1" type="Area2D" parent="." unique_id=2043444848]
 script = ExtResource("4_5r3ok")
+toward_scene_path = "uid://d1g1qkrl11vls"
+toward_object_name = "debut_start_2"
 metadata/_custom_type_script = "uid://ddme071y85g7k"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TransitionSpace" unique_id=1559023431]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fin_start_1" unique_id=1559023431]
 position = Vector2(6343.75, -2112.375)
 shape = SubResource("RectangleShape2D_6moqk")
 
-[node name="Marker2D" type="Marker2D" parent="TransitionSpace" unique_id=834937671]
+[node name="Marker2D" type="Marker2D" parent="fin_start_1" unique_id=834937671]
 position = Vector2(6214, -1993)
 
 [node name="TransitionSpace2" type="Area2D" parent="." unique_id=846505098]
@@ -66,3 +70,11 @@ shape = SubResource("RectangleShape2D_vt3uf")
 
 [node name="Marker2D" type="Marker2D" parent="TransitionSpace2" unique_id=1753268942]
 position = Vector2(-1901, -1036)
+
+[node name="Label" type="Label" parent="." unique_id=14757404]
+offset_left = 5429.0
+offset_top = -109.0
+offset_right = 5626.0
+offset_bottom = -86.0
+text = "COOL ASS SECRET WALL
+"
