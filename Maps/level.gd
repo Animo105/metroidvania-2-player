@@ -29,4 +29,4 @@ func _draw() -> void:
 		Vector2(limit_left, limit_top),
 		Vector2(limit_right - limit_left, limit_bottom - limit_top)
 	)
-	draw_rect(rect, Color(0.2, 0.8, 1.0), false, 5)
+	draw_rect(rect, Color(0.2, 0.8, 1.0), false, 10)

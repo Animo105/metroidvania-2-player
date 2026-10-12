@@ -12,6 +12,7 @@ size = Vector2(104, 245)
 script = ExtResource("1_rkh4m")
 level_id = "Starting_point"
 limit_right = 10000
+limit_bottom = 100
 metadata/_custom_type_script = "uid://cmvu7vwdhtwna"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=664169307]
