@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://84pnyeqcblrc"
-path="res://.godot/imported/big_guy_jump_legs.png-d7cf96685f7c1b789c1f0af1fe4d2ee0.ctex"
+uid="uid://qi3lgupl08r5"
+path="res://.godot/imported/big_guy_fall.png-0cf24d4cde4052b91189e22b367b96e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/BigDude/big_guy_jump_legs.png"
-dest_files=["res://.godot/imported/big_guy_jump_legs.png-d7cf96685f7c1b789c1f0af1fe4d2ee0.ctex"]
+source_file="res://Assets/BigDude/big_guy_fall.png"
+dest_files=["res://.godot/imported/big_guy_fall.png-0cf24d4cde4052b91189e22b367b96e9.ctex"]
 
 [params]
 

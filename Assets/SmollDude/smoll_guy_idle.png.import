@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7441di0lbl4x"
-path="res://.godot/imported/smoll_guy_fall_legs.png-69dda431f50e37c85e176599c5d90ebc.ctex"
+uid="uid://oxqcw8xs24as"
+path="res://.godot/imported/smoll_guy_idle.png-aa44acbf257694e1443b61613f167a2a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/SmollDude/smoll_guy_fall_legs.png"
-dest_files=["res://.godot/imported/smoll_guy_fall_legs.png-69dda431f50e37c85e176599c5d90ebc.ctex"]
+source_file="res://Assets/SmollDude/smoll_guy_idle.png"
+dest_files=["res://.godot/imported/smoll_guy_idle.png-aa44acbf257694e1443b61613f167a2a.ctex"]
 
 [params]
 

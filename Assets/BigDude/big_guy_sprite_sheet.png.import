@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxkbas27wel5y"
-path="res://.godot/imported/smoll_guy_jump_body.png-1602da94b8ed919b73230319653f3b05.ctex"
+uid="uid://18p3fexry1gk"
+path="res://.godot/imported/big_guy_sprite_sheet.png-9401e073dd1bad25437c558c4b4d5b7c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/SmollDude/smoll_guy_jump_body.png"
-dest_files=["res://.godot/imported/smoll_guy_jump_body.png-1602da94b8ed919b73230319653f3b05.ctex"]
+source_file="res://Assets/BigDude/big_guy_sprite_sheet.png"
+dest_files=["res://.godot/imported/big_guy_sprite_sheet.png-9401e073dd1bad25437c558c4b4d5b7c.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjmygua83lhxo"
-path="res://.godot/imported/big_guy_jump_body.png-86ec9af6aabf0b1aa592830fa0d3b97a.ctex"
+uid="uid://u71kkgqum5gk"
+path="res://.godot/imported/smoll_guy_fall.png-3dcab0754b6b3ba623ba4a0509aa2af5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/BigDude/big_guy_jump_body.png"
-dest_files=["res://.godot/imported/big_guy_jump_body.png-86ec9af6aabf0b1aa592830fa0d3b97a.ctex"]
+source_file="res://Assets/SmollDude/smoll_guy_fall.png"
+dest_files=["res://.godot/imported/smoll_guy_fall.png-3dcab0754b6b3ba623ba4a0509aa2af5.ctex"]
 
 [params]
 

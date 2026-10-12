@@ -32,7 +32,7 @@ func _change_map_request(peer_id : int, file : String, object_name : StringName)
 	if not new_map : 
 		push_error("File ",file, "couldn't be instantiated")
 		return
-	
+
 	# fade in,
 
 	var other_player := Globals.get_other_player_node()

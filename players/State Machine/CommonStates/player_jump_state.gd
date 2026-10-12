@@ -3,7 +3,6 @@ class_name PlayerJumpState
 
 func enter(_previous_state: String) -> void:
 	player.velocity.y = player.jump_velocity * player.jump_multiplier
-	prints(player.name, "jump","(%s)" % player.velocity.y)
 
 func physics_update(delta: float) -> void:
 	
