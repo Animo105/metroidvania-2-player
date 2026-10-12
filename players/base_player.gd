@@ -69,7 +69,7 @@ func apply_horizontal_movement( direction: float, delta: float, in_air: bool) ->
 	var decel = air_deceleration if in_air else deceleration
 	
 	if direction == 0.0:
-		velocity.x = move_toward(velocity.x, 0.0, decel * delta)
+		velocity.x = 0
 	else:
 		last_direction = direction
-		velocity.x = move_toward(velocity.x, target_speed, accel * delta)
+		velocity.x = target_speed

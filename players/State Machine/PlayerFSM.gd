@@ -23,6 +23,9 @@ func _ready() -> void:
 	else:
 		change_state(states.keys()[0])
 
+func get_current_state_string() -> String:
+	return _current_state_key
+
 func physics_update(delta:float)->void:
 	_current_state.physics_update(delta)
 

@@ -6,11 +6,15 @@
 [ext_resource type="Script" uid="uid://cu63p0oseesin" path="res://players/State Machine/CommonStates/player_falling_state.gd" id="5_pqacr"]
 [ext_resource type="Texture2D" uid="uid://cco31sh0t0caa" path="res://Assets/BigDude/big_guy_idle_body.png" id="6_3h33q"]
 [ext_resource type="Script" uid="uid://cyvhh480oqr2k" path="res://players/State Machine/CommonStates/player_jump_state.gd" id="6_ix8db"]
+[ext_resource type="Texture2D" uid="uid://c6krwee2ojfch" path="res://Assets/BigDude/big_guy_fall_body.png" id="6_qn1a2"]
 [ext_resource type="Texture2D" uid="uid://c8edkl2u0muj6" path="res://Assets/BigDude/big_guy_walk_body.png" id="7_ix8db"]
 [ext_resource type="Texture2D" uid="uid://ctfrueq4eot3k" path="res://Assets/BigDude/big_guy_ilde_legs.png" id="7_pqacr"]
+[ext_resource type="Texture2D" uid="uid://cjmygua83lhxo" path="res://Assets/BigDude/big_guy_jump_body.png" id="8_fxvxp"]
 [ext_resource type="Texture2D" uid="uid://dfb1u0l2nw5ct" path="res://Assets/BigDude/big_guy_walk_legs.png" id="9_ix8db"]
 [ext_resource type="Script" uid="uid://dmey1bvo8222e" path="res://players/animation_component.gd" id="10_7s10u"]
+[ext_resource type="Texture2D" uid="uid://j4rxlxhekaee" path="res://Assets/BigDude/big_guy_fall_legs.png" id="10_f2ngn"]
 [ext_resource type="Script" uid="uid://bk6flpn2jjgym" path="res://players/input_component.gd" id="11_j1lu0"]
+[ext_resource type="Texture2D" uid="uid://84pnyeqcblrc" path="res://Assets/BigDude/big_guy_jump_legs.png" id="12_rcfm8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1qxx0"]
 radius = 60.0
@@ -49,10 +53,26 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("6_qn1a2")
+}],
+"loop": 0,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_0uxui")
 }],
 "loop": 1,
 "name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_fxvxp")
+}],
+"loop": 0,
+"name": &"jump",
 "speed": 5.0
 }, {
 "frames": [{
@@ -109,10 +129,26 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("10_f2ngn")
+}],
+"loop": 0,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_3h33q")
 }],
 "loop": 1,
 "name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_rcfm8")
+}],
+"loop": 0,
+"name": &"jump",
 "speed": 5.0
 }, {
 "frames": [{
@@ -140,6 +176,18 @@ animations = [{
 properties/0/path = NodePath(".:position")
 properties/0/spawn = true
 properties/0/replication_mode = 1
+properties/1/path = NodePath("Legs/AnimatedSprite2D:animation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath("Body/AnimatedSprite2D:animation")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath("Body/AnimatedSprite2D:flip_h")
+properties/3/spawn = true
+properties/3/replication_mode = 2
+properties/4/path = NodePath("Legs/AnimatedSprite2D:flip_h")
+properties/4/spawn = true
+properties/4/replication_mode = 2
 
 [node name="Player2" type="CharacterBody2D" unique_id=559135851]
 collision_layer = 4
@@ -171,16 +219,14 @@ position = Vector2(0, -128)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Body" unique_id=733236236]
 sprite_frames = SubResource("SpriteFrames_pe0b4")
-animation = &"walk"
-frame = 3
-frame_progress = 0.055612113
+animation = &"fall"
 
 [node name="Legs" type="Node2D" parent="." unique_id=425671752]
 position = Vector2(0, -128)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Legs" unique_id=29446689]
 sprite_frames = SubResource("SpriteFrames_y3suw")
-animation = &"idle"
+animation = &"fall"
 
 [node name="PlayerAnimationComponent" type="Node" parent="." unique_id=801330209 node_paths=PackedStringArray("fsm", "legs_animation_player", "body_animation_player")]
 script = ExtResource("10_7s10u")
