@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://du5j175gnpw01" path="res://Globals/Tools for level creation/camera_region.gd" id="4_xj87n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mxueg"]
-size = Vector2(7494, 2888)
+size = Vector2(7629, 2891)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xj87n"]
 size = Vector2(104, 245)
@@ -36,7 +36,7 @@ script = ExtResource("4_xj87n")
 metadata/_custom_type_script = "uid://du5j175gnpw01"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CameraRegions/CameraRegion" unique_id=390084404]
-position = Vector2(2616, -1275)
+position = Vector2(2683.5, -1276.5)
 shape = SubResource("RectangleShape2D_mxueg")
 
 [node name="TransitionPointsContainer" type="Node2D" parent="." unique_id=1488753502]

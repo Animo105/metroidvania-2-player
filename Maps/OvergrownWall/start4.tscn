@@ -11,11 +11,11 @@ metadata/_custom_type_script = "uid://cmvu7vwdhtwna"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1147391759]
 
-[node name="TileMapsContainer" type="Node2D" parent="." unique_id=1169380621]
+[node name="TileMapsContainer" type="Node2D" parent="." unique_id=2084764435]
 
-[node name="TileMapLayer" type="TileMapLayer" parent="TileMapsContainer" unique_id=1784059663]
+[node name="TileMapLayer" type="TileMapLayer" parent="TileMapsContainer" unique_id=1034438985]
 tile_set = ExtResource("2_8oldr")
 
-[node name="CameraRegions" type="Node2D" parent="." unique_id=1256968418]
+[node name="CameraRegions" type="Node2D" parent="." unique_id=1965161643]
 
-[node name="TransitionPointsContainer" type="Node2D" parent="." unique_id=1065970915]
+[node name="TransitionPointsContainer" type="Node2D" parent="." unique_id=1503542813]
