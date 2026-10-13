@@ -28,6 +28,7 @@ FadeScreen="*uid://tnh31garw4aa"
 window/size/viewport_width=1280
 window/size/viewport_height=720
 window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 
 [file_customization]
 

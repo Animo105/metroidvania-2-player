@@ -293,7 +293,11 @@ properties/1/replication_mode = 2
 [node name="Player1" type="CharacterBody2D" unique_id=173757113]
 collision_layer = 4
 script = ExtResource("1_iapfj")
-jump_velocity = -1000.0
+move_speed = 600.0
+air_speed = 500.0
+rise_gravity = 1600.0
+fall_gravity = 2000.0
+jump_velocity = -1200.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1442353546]
 position = Vector2(-2, -85)

@@ -9,8 +9,6 @@ z_as_relative = false
 script = ExtResource("1_b4bp7")
 metadata/_custom_type_script = "uid://cmvu7vwdhtwna"
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1147391759]
-
 [node name="TileMapsContainer" type="Node2D" parent="." unique_id=2084764435]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="TileMapsContainer" unique_id=1034438985]

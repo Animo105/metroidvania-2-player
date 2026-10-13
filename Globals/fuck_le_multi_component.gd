@@ -14,13 +14,14 @@ func _ready() -> void:
 		else:
 			Globals.big_dude.is_local_player = true
 			Globals.big_dude.owner_peer_id = 1
-	
-	var game := get_parent()
-	var map_container = game.get_node_or_null("Maps_container")
-	if map_container:
-		var current_map = map_container.get_child(0)
-		map_container.remove_child(current_map)
-		current_map.queue_free()
-	map_container.add_child(wanted_scene.instantiate())
+		
+		if wanted_scene != null:
+			var game := get_parent()
+			var map_container = game.get_node_or_null("Maps_container")
+			if map_container:
+				var current_map = map_container.get_child(0)
+				map_container.remove_child(current_map)
+				current_map.queue_free()
+			map_container.add_child(wanted_scene.instantiate())
 		
 	

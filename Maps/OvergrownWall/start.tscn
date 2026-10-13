@@ -8,9 +8,6 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mxueg"]
 size = Vector2(7629, 2891)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xj87n"]
-size = Vector2(104, 245)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6moqk"]
 size = Vector2(119.5, 264.75)
 
@@ -41,52 +38,37 @@ shape = SubResource("RectangleShape2D_mxueg")
 
 [node name="TransitionPointsContainer" type="Node2D" parent="." unique_id=1488753502]
 
-[node name="Right" type="Area2D" parent="TransitionPointsContainer" unique_id=880672641]
-position = Vector2(7516, -37)
-collision_layer = 0
-collision_mask = 4
-script = ExtResource("4_5r3ok")
-toward_scene_path = "uid://rxpd4cf0p876"
-toward_object_name = "Left"
-metadata/_custom_type_script = "uid://ddme071y85g7k"
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TransitionPointsContainer/Right" unique_id=388231332]
-position = Vector2(-7972, -636)
-shape = SubResource("RectangleShape2D_xj87n")
-
-[node name="Marker2D" type="Marker2D" parent="TransitionPointsContainer/Right" unique_id=504736215]
-position = Vector2(-8192, -526)
-
 [node name="fin_start_1" type="Area2D" parent="TransitionPointsContainer" unique_id=2043444848]
+position = Vector2(6345, -2108)
 collision_layer = 0
 collision_mask = 4
 script = ExtResource("4_5r3ok")
+exit_direction = "Left"
 toward_scene_path = "uid://d1g1qkrl11vls"
 toward_object_name = "debut_start_2"
 metadata/_custom_type_script = "uid://ddme071y85g7k"
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TransitionPointsContainer/fin_start_1" unique_id=1559023431]
-position = Vector2(6343.75, -2112.375)
 shape = SubResource("RectangleShape2D_6moqk")
 
 [node name="Marker2D" type="Marker2D" parent="TransitionPointsContainer/fin_start_1" unique_id=834937671]
-position = Vector2(6214, -1993)
+position = Vector2(-256, 128)
 
 [node name="TransitionSpace2" type="Area2D" parent="TransitionPointsContainer" unique_id=846505098]
+position = Vector2(-2010, -1121)
 collision_layer = 0
 collision_mask = 4
 script = ExtResource("4_5r3ok")
+exit_direction = "Right"
 metadata/_custom_type_script = "uid://ddme071y85g7k"
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TransitionPointsContainer/TransitionSpace2" unique_id=1503050553]
-position = Vector2(-2010.5, -1120)
 shape = SubResource("RectangleShape2D_vt3uf")
 
 [node name="Marker2D" type="Marker2D" parent="TransitionPointsContainer/TransitionSpace2" unique_id=1753268942]
-position = Vector2(-1901, -1036)
+position = Vector2(241, 99)
 
 [node name="Label" type="Label" parent="." unique_id=14757404]
 offset_left = 5429.0
