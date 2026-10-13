@@ -19,5 +19,6 @@ metadata/_custom_type_script = "uid://cx11saof0rsk1"
 [node name="Maps_container" type="Node2D" parent="." unique_id=1328400153]
 
 [node name="Level" parent="Maps_container" unique_id=1429733597 instance=ExtResource("3_feb5d")]
+position = Vector2(17, 44)
 
 [node name="PlayersContainer" type="Node2D" parent="." unique_id=2039536744]
