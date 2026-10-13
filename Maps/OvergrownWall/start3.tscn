@@ -1,8 +1,8 @@
 [gd_scene format=4 uid="uid://i63akgukcrmj"]
 
-[ext_resource type="Script" uid="uid://cmvu7vwdhtwna" path="res://Maps/level.gd" id="1_as754"]
+[ext_resource type="Script" uid="uid://cmvu7vwdhtwna" path="res://Globals/Tools for level creation/level.gd" id="1_as754"]
 [ext_resource type="TileSet" uid="uid://742nf250a0yi" path="res://Assets/tileset.tres" id="2_4hgum"]
-[ext_resource type="Script" uid="uid://ddme071y85g7k" path="res://Globals/transition_space.gd" id="3_4622h"]
+[ext_resource type="Script" uid="uid://ddme071y85g7k" path="res://Globals/Tools for level creation/transition_space.gd" id="3_4622h"]
 [ext_resource type="Texture2D" uid="uid://doqent1bfqcd5" path="res://Assets/New Piskel-4.png.png" id="4_vamm1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6moqk"]

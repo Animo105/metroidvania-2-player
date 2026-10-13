@@ -1,8 +1,8 @@
 [gd_scene format=4 uid="uid://rxpd4cf0p876"]
 
-[ext_resource type="Script" uid="uid://cmvu7vwdhtwna" path="res://Maps/level.gd" id="1_7u8va"]
+[ext_resource type="Script" uid="uid://cmvu7vwdhtwna" path="res://Globals/Tools for level creation/level.gd" id="1_7u8va"]
 [ext_resource type="TileSet" uid="uid://742nf250a0yi" path="res://Assets/tileset.tres" id="2_v6vg7"]
-[ext_resource type="Script" uid="uid://ddme071y85g7k" path="res://Globals/transition_space.gd" id="3_pxphd"]
+[ext_resource type="Script" uid="uid://ddme071y85g7k" path="res://Globals/Tools for level creation/transition_space.gd" id="3_pxphd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pe0b4"]
 size = Vector2(114, 275)

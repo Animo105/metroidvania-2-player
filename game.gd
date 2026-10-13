@@ -9,20 +9,21 @@ var current_map : Level
 func _ready() -> void:
 	current_map = maps_container.get_child(0)
 	EventBus.player_entered_door.connect(_change_map_request)
+	EventBus.update_camera_limits.connect(_on_camera_limits_changed)
 	players_container.add_child(Globals.smoll_dude)
 	players_container.add_child(Globals.big_dude)
 	camera_follow_2d.target = Globals.get_self_player_node()
 	
 	Globals.self_map_id = "testing_zone_1"
 	Globals.other_map_id = "testing_zone_1"
-	apply_cam_limit()
 	# check to init map
 
-func apply_cam_limit():
-	camera_follow_2d.limit_bottom = current_map.limit_bottom
-	camera_follow_2d.limit_left = current_map.limit_left
-	camera_follow_2d.limit_right = current_map.limit_right
-	camera_follow_2d.limit_top = current_map.limit_top
+func _on_camera_limits_changed(bounds: Rect2) -> void:
+	print("set limits ",bounds)
+	camera_follow_2d.limit_left = int(bounds.position.x)
+	camera_follow_2d.limit_top = int(bounds.position.y)
+	camera_follow_2d.limit_right = int(bounds.end.x)
+	camera_follow_2d.limit_bottom = int(bounds.end.y)
 
 func _change_map_request(peer_id : int, file : String, object_name : StringName):
 	if peer_id != multiplayer.get_unique_id() : return
@@ -47,7 +48,6 @@ func _change_map_request(peer_id : int, file : String, object_name : StringName)
 	maps_container.add_child.call_deferred(new_map)
 	
 	await current_map.ready
-	apply_cam_limit()
 	for node : Node2D in get_tree().get_nodes_in_group("TransitionPoint"):
 		if node.name != object_name: continue
 		print("found the node")
