@@ -3,14 +3,13 @@
 [ext_resource type="Script" uid="uid://deswn85838kvm" path="res://game.gd" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://cx11saof0rsk1" path="res://players/Camera/camera_follow.gd" id="2_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://gposihusiujp" path="res://test_level.tscn" id="3_feb5d"]
+[ext_resource type="Script" uid="uid://bdeew4gdfch7s" path="res://Globals/fuck_le_multi_component.gd" id="4_fc0e3"]
+[ext_resource type="PackedScene" uid="uid://c0670lnycolb6" path="res://Maps/OvergrownWall/start4.tscn" id="5_7jktm"]
 
 [node name="Game" type="Node2D" unique_id=1579202402]
 script = ExtResource("1_80nbo")
 
 [node name="CameraFollow2D" type="Camera2D" parent="." unique_id=404502275]
-offset = Vector2(0, -80)
-zoom = Vector2(0.6, 0.6)
-limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 script = ExtResource("2_e2o6t")
@@ -21,3 +20,8 @@ metadata/_custom_type_script = "uid://cx11saof0rsk1"
 [node name="Level" parent="Maps_container" unique_id=1429733597 instance=ExtResource("3_feb5d")]
 
 [node name="PlayersContainer" type="Node2D" parent="." unique_id=2039536744]
+
+[node name="FuckLeMultiComponent" type="Node" parent="." unique_id=1067094786]
+script = ExtResource("4_fc0e3")
+wanted_scene = ExtResource("5_7jktm")
+metadata/_custom_type_script = "uid://bdeew4gdfch7s"

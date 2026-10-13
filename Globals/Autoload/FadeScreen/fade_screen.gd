@@ -7,7 +7,7 @@ signal animation_finished
 
 var tween : Tween
 
-func fade_in():
+func fade_out():
 	if tween : tween.kill()
 	tween = create_tween()
 	tween.tween_property(color_rect, "self_modulate", Color(1,1,1,0), 0.2)
@@ -15,7 +15,7 @@ func fade_in():
 	tween.tween_callback(animation_finished.emit)
 	
 
-func fade_out():
+func fade_in():
 	if tween : tween.kill()
 	tween = create_tween()
 	tween.tween_callback(color_rect.show)

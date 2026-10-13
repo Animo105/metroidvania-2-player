@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c0670lnycolb6"]
 
-[ext_resource type="Script" uid="uid://cmvu7vwdhtwna" path="res://Maps/level.gd" id="1_b4bp7"]
+[ext_resource type="Script" uid="uid://cmvu7vwdhtwna" path="res://Globals/Tools for level creation/level.gd" id="1_b4bp7"]
+[ext_resource type="TileSet" uid="uid://742nf250a0yi" path="res://Assets/tileset.tres" id="2_8oldr"]
 
 [node name="Start4" type="Node2D" unique_id=353394539]
 z_index = 4096
@@ -9,3 +10,12 @@ script = ExtResource("1_b4bp7")
 metadata/_custom_type_script = "uid://cmvu7vwdhtwna"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1147391759]
+
+[node name="TileMapsContainer" type="Node2D" parent="." unique_id=1169380621]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="TileMapsContainer" unique_id=1784059663]
+tile_set = ExtResource("2_8oldr")
+
+[node name="CameraRegions" type="Node2D" parent="." unique_id=1256968418]
+
+[node name="TransitionPointsContainer" type="Node2D" parent="." unique_id=1065970915]

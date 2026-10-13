@@ -16,10 +16,10 @@ func _ready() -> void:
 	
 	Globals.self_map_id = "testing_zone_1"
 	Globals.other_map_id = "testing_zone_1"
-	# check to init map
+	
+	FadeScreen.fade_out()
 
 func _on_camera_limits_changed(bounds: Rect2) -> void:
-	print("set limits ",bounds)
 	camera_follow_2d.limit_left = int(bounds.position.x)
 	camera_follow_2d.limit_top = int(bounds.position.y)
 	camera_follow_2d.limit_right = int(bounds.end.x)
@@ -34,7 +34,8 @@ func _change_map_request(peer_id : int, file : String, object_name : StringName)
 		push_error("File ",file, "couldn't be instantiated")
 		return
 
-	# fade in,
+	FadeScreen.fade_in()
+	await FadeScreen.animation_finished
 
 	var other_player := Globals.get_other_player_node()
 	var self_player := Globals.get_self_player_node()
@@ -50,23 +51,21 @@ func _change_map_request(peer_id : int, file : String, object_name : StringName)
 	await current_map.ready
 	for node : Node2D in get_tree().get_nodes_in_group("TransitionPoint"):
 		if node.name != object_name: continue
-		print("found the node")
 		if node is TransitionSpace:
-			print("exit through transition space")
+			print("exit through transition space.")
 			node.set_player_position(self_player)
-			camera_follow_2d.reset_smoothing()
 			break
 		elif node is Marker2D:
-			print("exit through marker")
+			print("exit through marker.")
 			self_player.global_position = node.global_position
-			camera_follow_2d.reset_smoothing()
 			break
 	
+	camera_follow_2d.reset_smoothing()
 	self_player.visible = true
 	if Globals.self_map_id == Globals.other_map_id:
 		other_player.visible = true
 	
-	# fade out,
+	FadeScreen.fade_out()
 
 @rpc("any_peer", "call_remote", "reliable")
 func other_player_traveling_to(next_map_id : String):

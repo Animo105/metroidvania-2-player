@@ -29,3 +29,6 @@ position = Vector2(105, -921)
 shape = SubResource("RectangleShape2D_gbhdq")
 
 [node name="TransitionPointsContainer" type="Node2D" parent="." unique_id=886915355]
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=559693031]
+position = Vector2(2550, 253)

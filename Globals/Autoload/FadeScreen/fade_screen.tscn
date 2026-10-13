@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://tnh31garw4aa"]
 
-[ext_resource type="Script" uid="uid://ds2tqomyqsxka" path="res://Globals/Autoload/TransitionScreen/transition_screen.gd" id="1_hlke1"]
+[ext_resource type="Script" uid="uid://ds2tqomyqsxka" path="res://Globals/Autoload/FadeScreen/fade_screen.gd" id="1_rloql"]
 
-[node name="TransitionScreen" type="CanvasLayer" unique_id=1120774312]
-script = ExtResource("1_hlke1")
+[node name="FadeScreen" type="CanvasLayer" unique_id=1120774312]
+script = ExtResource("1_rloql")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1571625307]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
