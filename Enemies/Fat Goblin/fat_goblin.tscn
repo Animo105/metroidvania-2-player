@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b2plttkx8nbo8"]
+
+[ext_resource type="Texture2D" uid="uid://doqent1bfqcd5" path="res://Assets/New Piskel-4.png.png" id="1_6j4a6"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pe0b4"]
+radius = 8.0
+height = 24.0
+
+[node name="FatGoblin" type="CharacterBody2D" unique_id=987167002]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1944114002]
+position = Vector2(0, -12)
+shape = SubResource("CapsuleShape2D_pe0b4")
+
+[node name="NewPiskel4_png" type="Sprite2D" parent="." unique_id=948943847]
+position = Vector2(1, -16)
+texture = ExtResource("1_6j4a6")

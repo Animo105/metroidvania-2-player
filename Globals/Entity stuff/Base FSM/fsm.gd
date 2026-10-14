@@ -6,15 +6,19 @@ var states : Dictionary[String, State] = {}
 var _current_state : State
 var _current_state_key : String
 
+func _register_state(child) -> bool:
+	if child is State:
+		child.fsm = self
+		return true
+	return false
 
 func _ready() -> void:
 	for child in get_children():
-		if child is State:
-			child.fsm = self
+		if _register_state(child):
 			states[child.name.to_lower()] = child
 		else:
 			child.queue_free()
-			push_warning("State machine contains a none state object")
+			push_warning("State machine refused child: ", child)
 	if states.is_empty():
 		queue_free()
 	else:
